@@ -1,0 +1,130 @@
+* {
+	font-family: "centry goth", "微軟正黑體";
+}
+
+#board {
+	 position:relative;
+	 top: 5%;
+	 margin:0px auto;
+	 width:60%;
+	 height:100%;
+	 z-index: 0;
+}
+
+#right {
+	position: absolute;
+	background-image: url('../images/mainpage/right.png');
+	background-repeat: repeat-y;
+	width: 30%;
+	right: 0;
+	height: 100%;
+	z-index: 0;
+	-moz-background-size:contain;
+	-webkit-background-size:contain;
+	-o-background-size:contain;
+	background-size:contain;	
+}
+
+#left {
+
+	position: absolute;
+	background-image: url('../images/mainpage/left.png');
+	background-repeat: repeat-y;
+	width: 30%;
+	left: 0;
+	height: 100%;
+	z-index: 0;
+	-moz-background-size:contain;
+	-webkit-background-size:contain;
+	-o-background-size:contain;
+	background-size:contain;	
+}
+
+
+#clock {
+	 position: fixed;
+	 width:15%;
+	 height:30%;
+	 top:5%;
+	 left:45%;
+	 z-index:2;
+}
+
+#blackTriangle {
+	position: absolute;
+}
+
+#grayTriangle {
+	position: absolute;
+	top: 25%;
+	left: 15%;
+}
+
+#leftboard {
+	 position:absolute;
+	 width:35%;
+	 height:100%;
+	 left:13%;
+	 top:5%;;
+	 z-index:1;
+}
+
+#rightboard {
+	position: absolute;
+	width:35%;
+	height:100%;
+	top:0%;
+	right: 5%;
+	z-index:1;
+}
+
+.absolute {
+	position: absolute;
+}
+
+.blackBorder {
+	margin-top: 50px;
+	width: 200px;
+	height: 200px;	
+	z-index:2;
+}
+
+.grayBorder {
+	margin-top: 50px;
+	width: 200px;
+	height: 200px;	
+	z-index:2;
+}
+
+._title {
+	position: relative;
+	top: 45px;
+	left: 35px;
+	z-index:3;	
+}
+
+._content {
+	position: relative;
+	width: 125px;
+	top: 70px;
+	left: 35px;
+	z-index:3;	
+
+}
+
+.p {
+	color: #F1F2F2;
+}
+
+.n {
+	color: #000000;
+}
+
+.link {
+	text-decoration: underline;
+}
+.link:hover {
+
+	cursor: pointer;
+
+}

@@ -1,0 +1,39 @@
+#mask {
+	background-color: #000000;
+	position: fixed;
+	z-index: 5;
+	width: 100%;
+	height: 100%;
+	opacity: 0.5	;
+	visibility: hidden;
+}
+
+#all {
+
+	position: fixed;
+	z-index: 6;
+	top: 15%;
+	left: 25%;
+	width: 50%;
+	height: 70%;
+	background-color: #F2F1F1;
+	border-radius: 20px;
+	padding: 5px;
+	visibility: hidden;
+}
+
+#allTitle {
+
+	position: relative;
+	font-size: 48pt;
+	margin: 20px;
+
+}
+
+#allContent {
+
+	position: relative;
+	font-size: 12pt;
+	margin: 0px 10px 10px 20px;
+
+}

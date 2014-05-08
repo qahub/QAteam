@@ -1,0 +1,14 @@
+<?php
+
+	include('connect.php');
+	
+	$topic = $_POST['topic'];
+	$fration = $_POST('fration');
+	$table = $_POST['table'];
+	$startPoint = $_POST['startPoint'];
+	$numOfLoad = $_POST['numOfLoad'];
+
+
+
+
+?>
