@@ -12,16 +12,18 @@
 			if(faction == 0){
 				$('#leftboard').append(" 			  \
 					<div id='pos"+_count+"' class='blackBorder'>						\
-						<canvas id='blackCircle"+_count+"' class='absolute' width=200px height=200px></canvas>  \
+						<canvas id='blackCircle"+_count+"' class='absolute' width=300px height=200px></canvas>  \
 						<div id='p_title"+_count+"' class='p _title absolute'></div>  \
 						<div id='p_content"+_count+"' class='p _content absolute'></div>  \
 					</div>     							\
 				");
 				$('#blackCircle'+_count).jCanvas({
 					 fillStyle: '#000',
-					 x: 100, y: 100,
-					 radius: 100
-				}).drawArc();
+					 x: 125, y: 75,
+					 width: 250,
+					 height: 150,
+					 cornerRadius: 10
+				}).drawRect();
 				
 				$.ajax({
 					url: 'qa_cgi/loadQAData.php',
@@ -39,8 +41,6 @@
 					error: function(xhr){
 						alert("ajax error");
 						console.log(xhr.status);
-						console.log(ajaxOptions);
-						console.log(throwError);
 					}
 				
 				});
@@ -49,16 +49,18 @@
 				var tmpCount = _count;
 				$('#rightboard').append(" 			  \
 					<div id='neg"+_count+"' class='grayBorder'>						\
-						<canvas id='grayCircle"+_count+"' class='absolute' width=200px height=200px></canvas>  \
+						<canvas id='grayCircle"+_count+"' class='absolute' width=300px height=300px></canvas>  \
 						<div id='n_title"+_count+"' class='n _title'></div>  \
 						<div id='n_content"+_count+"' class='n _content '></div>  \
 					</div>     							\
 				");
 				$('#grayCircle'+_count).jCanvas({
 					 fillStyle: '#F1F2F2',
-					 x: 100, y: 100,
-					 radius: 100
-				}).drawArc();
+					 x: 125, y: 75,
+					 width: 250,
+					 height: 150,
+					 cornerRadius: 10
+				}).drawRect();
 				
 				$.ajax({
 					url: 'qa_cgi/loadQAData.php',
@@ -75,8 +77,6 @@
 					error: function(xhr,ajaxOptions, thrownError){
 						alert("ajax error");
 						console.log(xhr.status);
-						console.log(ajaxOptions);
-						console.log(throwError);
 					}
 				});				
 						

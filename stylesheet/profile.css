@@ -6,7 +6,7 @@
 	 position:relative;
 	 top: 5%;
 	 margin:0px auto;
-	 width:60%;
+	 width: 80%;
 	 height:100%;
 	 z-index: 0;
 }
@@ -128,3 +128,64 @@
 	cursor: pointer;
 
 }
+
+nav {
+
+	position: fixed;
+	left: -100%;
+	top: 35%;
+	height: 193px;
+	width: 104%; 
+	padding: 0px 5px 0px 5px;
+	background-color: #9FA0A0;
+	color: #222222;
+	z-index: 5;
+}
+
+.middle{
+	
+	position: absolute;
+	right: 5px;
+	top: 45%;
+
+}
+
+#black {
+
+	position: relative;
+	top: 13%;
+	left: 10%;
+
+}
+
+#midPart {
+	
+	position: absolute;
+	font-size: 18pt;
+	top: 38%;
+	left: 30%;
+	width: 500px;
+
+}
+
+#aboutUs {
+
+	text-decoration: none;
+
+}
+
+#home {
+
+	float: right;
+	text-decoration: none;
+
+}
+
+#white {
+
+	position: absolute;
+	top: 13%;
+	right: 14%;
+
+}
+
