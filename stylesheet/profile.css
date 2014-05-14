@@ -141,6 +141,13 @@ nav {
 	background-color: #9FA0A0;
 	color: #222222;
 	z-index: 5;
+	opacity: 0.4;
+}
+
+nav:hover{
+
+	opacity: 1.0;
+
 }
 
 .middle{
