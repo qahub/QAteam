@@ -1,6 +1,5 @@
 <html>
 <head>
-	<script src="js/jcanvas.js"></script>
 	<script src="js/addCircle.js"></script>
 </head>
 	  <div id="mask"></div>
