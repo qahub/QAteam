@@ -65,8 +65,8 @@
 	 position:absolute;
 	 width:35%;
 	 height:100%;
-	 left:13%;
-	 top:5%;;
+	 left: 18%;
+	 top: 8%;
 	 z-index:1;
 }
 
@@ -99,7 +99,7 @@
 
 ._title {
 	position: relative;
-	top: 45px;
+	top: 25px;
 	left: 35px;
 	z-index:3;	
 }
@@ -107,7 +107,7 @@
 ._content {
 	position: relative;
 	width: 125px;
-	top: 70px;
+	top: 50px;
 	left: 35px;
 	z-index:3;	
 

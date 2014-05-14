@@ -30,7 +30,7 @@ $(document).ready( function () {
 
 	});
 
-	link('main.html');
+	link('main.php');
 
 	$('#aboutUs').click( function() {
 
@@ -40,7 +40,7 @@ $(document).ready( function () {
 
 	$('#home').click( function() {
 
-		link('main.html');
+		link('main.php');
 
 	});
 

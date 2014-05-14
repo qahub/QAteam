@@ -1,15 +1,40 @@
-	function openAll(){
-	
-		$('#mask').css("visibility","visible");
-		$('#all').css("visibility","visible");
-	
+	function openSet(_topic){
+
+		function openAll(_id){
+		
+			$('#mask').css("visibility","visible");
+			$('#all').css("visibility","visible");
+
+			$.ajax({
+
+				url: 'qa_cgi/loadQADataAll.php',
+				data: { id : _id ,topic : _topic},
+				type: "GET",
+				dataType: "json",
+				success: function(data){
+
+					$('#allTitle').append(data.title);
+					$('#allContent').append(data.content);
+
+				},
+				error: function(xhr){
+					alert("ajax error");
+					console.log(xhr.status);
+				}
+		
+			});	
+		
+		}
+		return openAll;
+
 	}
 
 	function circleSet(){
 
 		var _count = 0;
-		function drawCircle(faction){
+		function drawCircle(_topic, faction){
 			if(faction == 0){
+				var tmpCount = _count;
 				$('#leftboard').append(" 			  \
 					<div id='pos"+_count+"' class='blackBorder'>						\
 						<canvas id='blackCircle"+_count+"' class='absolute' width=300px height=200px></canvas>  \
@@ -27,16 +52,16 @@
 				
 				$.ajax({
 					url: 'qa_cgi/loadQAData.php',
-					data: { topic: 'Nuclear', count: tmpCount, fration: 0 },
+					data: { topic: _topic, count: tmpCount, fration: 0 },
 					type: "GET",
 					dataType: "json",
 					success: function(data){
-						var obj = $.parseJSON(data);
-						var summery = obj.content;
-						summery = summery.substr(1,20);
-						var link = "<a onclick='openAll()' class='link'>(詳全文)</a>";
-						$('#p_title'+_count).html(obj.title);
-						$('#p_content'+_count).html(summery+link);
+						var summery = data.content;
+						summery = summery.substr(0,9);
+						var link = "...<br><a onclick='openAll("+data.id+")' class='link'>(詳全文)</a>";
+						$('#p_title'+tmpCount).append(data.title);
+						$('#p_content'+tmpCount).append(summery+link);
+
 					},
 					error: function(xhr){
 						alert("ajax error");
@@ -64,13 +89,13 @@
 				
 				$.ajax({
 					url: 'qa_cgi/loadQAData.php',
-					data: { topic: 'Nuclear', count: tmpCount, fration: 1 },
+					data: { topic: _topic, count: tmpCount, fration: 1 },
 					type: "GET",
 					dataType: "json",
 					success: function(data){
 						var summery = data.content;
 						summery = summery.substr(0,9);
-						var link = "<br><a onclick='openAll()' class='link'>(詳全文)</a>";
+						var link = "...<br><a onclick='openAll("+data.id+")' class='link'>(詳全文)</a>";
 						$('#n_title'+tmpCount).append(data.title);
 						$('#n_content'+tmpCount).append(summery+link);
 					},
@@ -88,7 +113,10 @@
 		return drawCircle;
 	}
 
+	
+
 $(document).ready(function (){
+
 
 	$('#blackTriangle').jCanvas({
 		 fillStyle: 'black',
@@ -110,15 +138,9 @@ $(document).ready(function (){
 	
 		$('#mask').css("visibility","hidden");
 		$('#all').css("visibility","hidden");
+		$('#allTitle').html("");
+		$('#allContent').html("");
 	
 	});
 	
-
-
-	var leftCircle = circleSet();
-	var rightCircle = circleSet();
-	
-	rightCircle(1);
-
-
 });
