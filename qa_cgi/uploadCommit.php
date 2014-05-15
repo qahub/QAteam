@@ -23,6 +23,7 @@
 		}
 
 		$result = mysql_query($query) or die(mysql_error());
+		echo json_encode(array( 'name' => $username, 'comment' => $comment, 'dateTime' => $date." ".$time));
 
 	} else {
 
