@@ -13,8 +13,9 @@
 	var table = 1;
 
 	$(document).ready(function() {
+
 		loadAllComment(0, 'Nuclear', 1);
-		$('#input_comment_area').keydown(function(){inputKeyDown(event, uid, username, fration, topic, table)});
+		$('#input_comment_area').keydown(function(event){inputKeyDown(event, uid, username, fration, topic, table)});
 	});
 
 </script>

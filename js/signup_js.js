@@ -1,11 +1,11 @@
 function checkUser(id, username, type){
 
 	$.ajax({
-		url: '../qa_cgi/signup.php',
+		url: 'qa_cgi/signup.php',
 		type: 'POST',
 		data: { uid: id, username: username, type: type },
 		success: function(response){
-			document.location.href="index.html";
+			 document.location.href="index.php";
 		},
 		error: function(xhr, ajaxOptions, thrownError){
 			alert('ajax error');
@@ -18,7 +18,29 @@ function checkUser(id, username, type){
 
 }
 
+function logout(){
+
+	$.ajax({
+		url: 'qa_cgi/logout.php',
+		type: 'GET',
+		data: { },
+		success: function(response){
+			 document.location.href="index.php";
+		},
+		error: function(xhr, ajaxOptions, thrownError){
+			alert('ajax error');
+			console.log(xhr.status);
+			console.log(ajaxOptions);
+			console.log(throwError);
+		}
+
+	});
+
+}
 $(document).ready( function(){
+
+
+	$('#logout').click(logout);
 
 	(function(d){
 		var js;
