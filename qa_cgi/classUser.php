@@ -38,8 +38,8 @@ class User {
 	public function login(){
 
 		$row = $this->getUserData();
-		$_SESSION['id'] = $row['id'];
-		$_SESSION['name'] = $row['username'];
+		$_SESSION['uid'] = $row['id'];
+		$_SESSION['username'] = $row['username'];
 
 	}
 

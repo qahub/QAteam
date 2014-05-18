@@ -21,9 +21,10 @@ function loadAllComment(_fration, _topic, _table) {
 
 }
 
-function inputKeyDown(event, _uid, _username, _fration, _topic, _table){
+function inputKeyDown(e, _uid, _username, _fration, _topic, _table){
 
-	if(event.which == 13 && !(event.shiftKey) ){ // if press Enter
+
+	if(e.which == 13 && !(e.shiftKey) ){ // if press Enter
 
 		var _comment = $('#input_comment_area').val();
 
@@ -49,7 +50,7 @@ function inputKeyDown(event, _uid, _username, _fration, _topic, _table){
 
 }
 
-function score(id,pos){
+function score(id,pos,fration,topic,table){
 
 	var x = pos.left+20;
 	var y = pos.top-5;
@@ -58,12 +59,33 @@ function score(id,pos){
 	$('body').append("<div id='vote"+id+"' class='vote' style='position:absolute; left:"+x+"; top:"+y+"'></div>");
 
 	for(i=5;i>0;i--){
-		$('#vote'+id).append("<span class='suck_"+i+" scoreButton' onclick='addScore(-"+i+","+id+");'>-"+i+"</span>");
+		$('#vote'+id).append("<span class='suck_"+i+" scoreButton' onclick='addScore(-"+i+","+id+","+fration+","+topic+","+table+");'>-"+i+"</span>");
 	}
 	for(i=1;i<=5;i++){
-		$('#vote'+id).append("<span class='good_"+i+" scoreButton' onclick='addScore("+i+","+id+");'>"+i+"</span>");
+		$('#vote'+id).append("<span class='good_"+i+" scoreButton' onclick='addScore("+i+","+id+","+fration+","+topic+","+table+");'>"+i+"</span>");
 	}
 
 }
 
+function addScore(_score, _id, _fration, _topic, _table){
 
+	$.ajax({
+
+		url: "qa_cgi/addScore.php",
+		type: "POST",
+		data: { score : _score, id : _id, fration : _fration, topic : _topic, table : _table },
+		success: function () {
+			
+			$('#vote'+id).html("Thank you for your evaluation !");
+			setTimeout(function(){ $('#vote'+id).remove(); }, 1000);	
+
+		},
+		error: function(xhr) {
+
+			alert(xhr.status);
+		}
+
+
+	});
+
+}
