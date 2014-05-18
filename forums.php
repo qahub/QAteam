@@ -1,6 +1,7 @@
 <html>
 <head>
 <meta charset='utf8' />
+<link href="stylesheet/forums.css" rel="stylesheet" type="text/css"></link>
 <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
 <script src="js/commentFunc.js"></script>
@@ -14,7 +15,8 @@
 
 	$(document).ready(function() {
 		loadAllComment(0, 'Nuclear', 1);
-		$('#input_comment_area').keydown(function(){inputKeyDown(event, uid, username, fration, topic, table)});
+		$('#input_comment_area').keydown(function(){
+			inputKeyDown(event, uid, username, fration, topic, table)});
 	});
 
 </script>

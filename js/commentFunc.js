@@ -17,7 +17,7 @@ function loadAllComment(_fration, _topic, _table) {
 
 	});
 
-	setTimeout(function(){ loadAllComment(_fration, _topic, _table)}, 5000);
+	setTimeout(function(){ loadAllComment(_fration, _topic, _table)}, 50000);
 
 }
 
@@ -35,7 +35,7 @@ function inputKeyDown(event, _uid, _username, _fration, _topic, _table){
 				data: { uid : _uid, username : _username, comment : _comment, fration : _fration, topic : _topic, table : _table },
 				success: function(data){
 					$('#input_comment_area').val("");
-					$('#allComment').append("<div class='comment'><div><span class='name'>"+data.name+" </span><span class='comment'>"+data.comment+"</span></div><div><span class='dateTime'>"+data.dateTime+"</span><span class='grade'> 0</span></div></div>");
+					$('#allComment').append("<div class='comment'><div class='name_n_date'><span class='name'>"+data.name+" </span><span class='dateTime'>"+data.dateTime+"</span></div><div class='com'><span class='comment'>"+data.comment+"</span></div><span class='grade'> 0</span></div>");
 				},
 				error: function(xhr,ajaxOptions, thrownError){
 //					alert(xhr.status);		
