@@ -81,3 +81,50 @@ div.leftcom
 	margin-top: 0px;
 	float: left;
 }
+
+#arrow-new
+{ 
+	position: relative;
+	top: 10px;
+	left: 10%;
+
+	width:0px; 
+	height:0px; 
+	border-style:solid;
+	border-top-width: 25px;
+	border-bottom-width: 25px;
+	border-right-width: 0px;
+	border-left-width: 80px; 
+	border-color:transparent transparent transparent #4D4D4D;
+	border-style:dashed dashed dashed solid; 
+
+}
+
+#down
+{
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+
+	height: 70px;
+	width: 100%;
+
+	background-color: #000;
+}
+
+p#new
+{
+	color: #FFF;
+	font-size: 20px;
+	font: "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
+}
+
+#arrow-text
+{
+	position: absolute;
+	top: 0px;
+	left: 10%;
+
+	width: 20px;
+	height: 20px;
+}

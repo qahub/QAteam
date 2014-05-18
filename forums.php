@@ -39,5 +39,9 @@
 	</div>
 	<div id="hackpad">
 	</div>
+<div id="down">
+	<div id="arrow-new"></div>
+	<div id="arrow-text"> <p id="new">+new</p> </div>
+</div>
 </body>
 </html>
