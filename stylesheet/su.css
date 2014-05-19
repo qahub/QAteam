@@ -3,8 +3,8 @@
 	height: 100%;
 	width: 100%;
 	z-index: -1;
-
-	background: #000 url(../images/signup/signup_back.png) center center fixed no-repeat;
+	background: center center fixed no-repeat;
+	background-image: url('../images/signup/signup_back.png');
 	-moz-background-size: cover;
 	background-size: cover;
 }
@@ -41,7 +41,7 @@
 	height: auto;
 
 	top: 35%;
-	left: 65%;
+	right: 15%;
 	
 }
 #but
@@ -60,7 +60,7 @@
 
 t
 {
-    font: normal 30px "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
+    font: normal 20px "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
 }
 p
 {
@@ -82,7 +82,13 @@ p
 
 .icon:active {
 
-	padding-top: 1pt;
-	padding-left: 1pt;
+	border: solid 1px #000000;
+
+}
+
+.intro {
+
+	width: 100px;
+	height: 100px;
 
 }
