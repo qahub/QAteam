@@ -102,8 +102,42 @@ div.leftcom
 	border-left-width: 80px; 
 	border-color:transparent transparent transparent #4D4D4D;
 	border-style:dashed dashed dashed solid; 
-
 }
+
+#arrow-submit
+{ 
+	position: absolute;
+	top: 17%;
+	left: 0%;
+
+	width:0px; 
+	height:0px; 
+	border-style:solid;
+	border-top-width: 25px;
+	border-bottom-width: 25px;
+	border-right-width: 0px;
+	border-left-width: 85px; 
+	border-color:transparent transparent transparent #4D4D4D;
+	border-style:dashed dashed dashed solid; 
+}
+
+#arrow-cancel
+{ 
+	position: absolute;
+	top: 17%;
+	left: 0%;
+
+	width:0px; 
+	height:0px; 
+	border-style:solid;
+	border-top-width: 25px;
+	border-bottom-width: 25px;
+	border-right-width: 0px;
+	border-left-width: 85px; 
+	border-color:transparent transparent transparent #4D4D4D;
+	border-style:dashed dashed dashed solid; 
+}
+
 
 #down
 {
@@ -117,7 +151,7 @@ div.leftcom
 	background-color: #000;
 }
 
-p#new
+p
 {
 	color: #FFF;
 	font-size: 20px;
@@ -132,4 +166,61 @@ p#new
 
 	width: 20px;
 	height: 20px;
+}
+
+#arrow-subtext
+{
+	position: absolute;
+	top: 0%;
+	left: 0%;
+
+	width: 20px;
+	height: 20px;
+}
+
+#arrow-cantext
+{
+	position: absolute;
+	top: 0%;
+	left: 0%;
+
+	width: 20px;
+	height: 20px;
+}
+
+
+textarea
+{
+	resize: none;
+}
+
+textarea#reply
+{
+	position: relative;
+
+	margin-left: 10%;
+	margin-top: 5%;
+	height: 50%;
+	width: 50%;
+}
+
+div#arr
+{
+	position: relative;
+
+	margin-left: 50%;
+
+	height: 50px;
+	width: 50px;
+}
+
+div#arr2
+{
+	position: relative;
+
+	margin-left: 50%;
+	margin-top: 10px; 
+
+	height: 50px;
+	width: 50px;
 }
