@@ -48,8 +48,9 @@
 }
 #titleft
 {
-
+   position:absolute;
    font-size:30px;
+   left:30%;
       
 }
 #headpic
@@ -75,6 +76,12 @@
     width:100%;
 	resize:none;
 }
+.boticon
+{
+    position:absolute;
+    left:25%;
+}
+
 #foot
 {
 	position: absolute;
