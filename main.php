@@ -9,7 +9,7 @@
 <head>
 	<script src="js/jcanvas.js"></script>
 	<script src="js/addCircle.js"></script>
-	<script src="freeTalk.js"></script>
+	<script src="js/freeTalk.js"></script>
 	<script>
 	var openAll = openSet('<?php echo $topic; ?>');
 	var leftCircle = circleSet();
@@ -29,9 +29,11 @@
 ?>
 
 	$(document).ready(function() {
-
-		loadAllFreeTalk(fration, 'Nuclear', 1);
-		$('#input_talk_area').keydown(function(event){inputKeyDown(event, uid, username)});
+		var uid='123123';
+		var username="Jax";
+		var topic="<?php echo $topic;?>";
+		loadAllFreeTalk(topic);
+		$('#input_talk_area').keydown(function(event){inputKeyDown(event, uid, username,topic)});
 
 	});
 
@@ -58,12 +60,9 @@
 	 </div>
 	 <div id="custom">
 		<div id="customTop"></div>
+		<div id="titleft"> Free talk</div>
+			<br /><br />
 		<div id="freeTalk" >
-		    <div id="titleft"> Free talk</div>
-			<br></br>
-			<div class='talkBlock'><span class='username'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspJax: </span><span class='talk'>Hello world!</span></div>
-			<div class='talkBlock'><span class='username'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspJax: </span><span class='talk'>Hello world!</span></div>
-			<div class='talkBlock'><span class='username'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspJax: </span><span class='talk'>Hello world!</span></div>
 		</div>
 		<HR>
 		<textarea id='input_talk_area'></textarea>

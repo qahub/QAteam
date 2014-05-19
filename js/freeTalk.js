@@ -17,7 +17,7 @@ function loadAllFreeTalk(_topic) {
 
 	});
 
-	setTimeout(function(){ loadAllFreeTalk(_topic)}, 50000);
+	setTimeout(function(){ loadAllFreeTalk(_topic)}, 5000);
 
 }
 
