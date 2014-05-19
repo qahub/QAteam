@@ -59,7 +59,7 @@
 	 <div id="custom">
 		<div id="customTop"></div>
 		<div id="freeTalk" >
-		    <div id="titleft"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFree talk</div>
+		    <div id="titleft"> Free talk</div>
 			<br></br>
 			<div class='talkBlock'><span class='username'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspJax: </span><span class='talk'>Hello world!</span></div>
 			<div class='talkBlock'><span class='username'>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspJax: </span><span class='talk'>Hello world!</span></div>
@@ -70,6 +70,6 @@
 		<footer></footer>
 	 </div>
 	 <div id="foot">
-	     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <img class="boticon" src='images/mainpage/image.png'></img>
+	     <img class="boticon" src='images/mainpage/image.png'></img>
 	 </div>
 </html>	
