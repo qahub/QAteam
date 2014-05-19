@@ -3,6 +3,11 @@
 	font-family: "centry goth", "微軟正黑體";
 }
 
+body
+{
+	overflow: auto;
+}
+
 div#forums
 {
 	text-align: center;
@@ -94,6 +99,17 @@ span.minus
 {
 	position: relative;
 	top: -15px;
+}
+
+div#hackpad
+{
+	position: fixed;
+
+	left: 45%;
+	top: 20px;
+	width: 50%;
+	height: 50%;
+	float: right;
 }
 
 div.rightcom
@@ -203,6 +219,21 @@ div.rightvote
 }
 
 p
+{
+	color: #FFF;
+	font-size: 20px;
+	font: "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
+}
+
+div.leftvote p
+{
+	height: 2px;
+	color: #000;
+	font-size: 15px;
+	font: "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
+}
+
+div.rightvote p
 {
 	height: 2px;
 	color: #000;

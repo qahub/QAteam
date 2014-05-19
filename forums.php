@@ -67,6 +67,7 @@ function newClick(){
 		</form> 
 	</div>
 	<div id="hackpad">
+		<script src="https://qaweb.hackpad.com/QX40jss2oCy.js"></script><noscript><div>View <a href="https://qaweb.hackpad.com/QX40jss2oCy">BLACK</a> on Hackpad.</div></noscript>
 	</div>
 <div id="down">
 	<div id="arrow-new"></div>
