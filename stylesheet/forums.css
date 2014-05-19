@@ -19,7 +19,7 @@ div.comment
 	overflow: auto;
 	margin: 0 auto;
 	/*background-color: #FFFF00;*/
-	width: 450px;
+	width: 500px;
 	margin-top: 25px;
 }
 
@@ -84,16 +84,29 @@ span.scoreButton
 	width: 60px;
 }
 
+span.vote
+{
+	color: #000;
+	font-size: 20px;
+}
+
+span.minus
+{
+	position: relative;
+	top: -15px;
+}
+
 div.rightcom
 {
 	border-top-right-radius: 9px; 
 	border-bottom-right-radius: 9px; 
 	background-color: #CDCDCD; 
-	height: 103px;
-	width: 50px;
+	height: 123px;
+	width: 100px;
 	position: relative;
 	margin-top: 0px;
 	float: right;
+	overflow: hidden;
 }
 
 div.leftcom
@@ -102,11 +115,27 @@ div.leftcom
 	border-bottom-left-radius: 9px; 
 	background-color: #4D4D4D;
 	width: 400px;
-	height: 103px;
+	height: 123px;
 	overflow: hidden;
 	position: relative;
 	margin-top: 0px;
 	float: left;
+}
+
+div.leftvote
+{
+	margin-top: -28px;
+	height: 70px;
+	width: 50px;
+	float: left;
+}
+
+div.rightvote
+{
+	margin-top: -28px;
+	height: 70px;
+	width: 50px;
+	float: right;
 }
 
 #arrow-new
@@ -175,8 +204,9 @@ div.leftcom
 
 p
 {
-	color: #FFF;
-	font-size: 20px;
+	height: 2px;
+	color: #000;
+	font-size: 15px;
 	font: "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
 }
 

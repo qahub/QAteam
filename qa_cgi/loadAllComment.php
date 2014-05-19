@@ -21,8 +21,18 @@
 					</div>	
 				</div>
 				<div class='rightcom'>
+					<!--
 					<span class='grade'><?php echo $crow['grade']; ?></span>	
 					<span class='scoreButton' onclick='score(<?php echo $crow['id']; ?>, $(this).offset())'> score</span>	
+					-->
+					<span class="vote">vote</span>
+					<span class="minus">______________</span>
+					<div class="leftvote">
+						<p> 1 </p><p> 2 </p><p> 3 </p><p> 4 </p><p> 5 </p>
+					</div>
+					<div class="rightvote">
+						<p> -1 </p><p> -2 </p><p> -3 </p><p> -4 </p><p> -5 </p>
+					</div>
 				</div>
 			</div>
 <?php } ?>
