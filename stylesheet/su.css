@@ -8,7 +8,18 @@
 	-moz-background-size: cover;
 	background-size: cover;
 }
+#mark
+{
+	position: absolute;
+	z-index: 1;
 
+	width: auto;
+	height: auto;
+
+	top: 35%;
+	left: 17%;
+	
+}
 #container
 {
 	position: absolute;
@@ -17,32 +28,43 @@
 	width: auto;
 	height: auto;
 
-	top: 10%;
+	top: 35%;
+	left: 55%;
+	
+}
+#signal
+{
+	position: absolute;
+	z-index: 1;
+
+	width: auto;
+	height: auto;
+
+	top: 35%;
+	left: 65%;
+	
+}
+#but
+{
+	position: absolute;
+	z-index: 1;
+
+	width: auto;
+	height: auto;
+
+	top: 65%;
 	left: 55%;
 	
 }
 
-input
+
+t
 {
-	height: 30px;
-	width: 250px;
-
-	border: 0px ;
-	border-radius: 3px;
-	background: #CCCCCC;
+    font: normal 30px "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
 }
-
-img
-{
-	height: 40px;
-	width: 40px;
-
-	border-radius: 10px;
-}
-
 p
 {
-	font: normal 40px "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
+	font: normal 60px "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
 }
 
 .icon {
