@@ -58,11 +58,6 @@ function newClick(){
 <meta charset='UTF-8' />
 </head>
 
-<style>
-	#input_comment_area {
-		resize: none;
-	}
-</style>
 <body>
 	<div id ='forums'>
 		<div id='allComment'>

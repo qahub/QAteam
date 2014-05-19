@@ -17,6 +17,7 @@
 					</div>
 					<div class='com'>
 						<span class='comment'><?php echo nl2br($crow['comment']); ?></span>
+						<span>more</span>
 					</div>	
 				</div>
 				<div class='rightcom'>

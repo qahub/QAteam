@@ -25,8 +25,10 @@ div.comment
 
 div.com
 {
-	width: auto;
-	margin-right: 100px;
+	width: 90%;
+	height: 100px;
+	margin: 0 auto;
+	overflow:hidden;
 }
 
 div.name_n_date
@@ -39,6 +41,26 @@ span
 {
 	font: "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
 	color: #FFF;
+}
+
+span.comment
+{
+	width: 90%;
+	height: 100px;
+	margin: 0 auto;
+	float:left;
+	overflow: hidden;
+
+	display : inline-block;
+  	overflow : hidden;
+  	text-overflow : ellipsis;
+  	white-space : nowrap;
+
+	/*white-space:nowrap; 
+	text-overflow:ellipsis; 
+	-o-text-overflow:ellipsis; 
+	-moz-binding:url('ellipsis.xml#ellipsis');*/ 
+
 }
 
 span.name
@@ -67,7 +89,7 @@ div.rightcom
 	border-top-right-radius: 9px; 
 	border-bottom-right-radius: 9px; 
 	background-color: #CDCDCD; 
-	height: 70px;
+	height: 103px;
 	width: 50px;
 	position: relative;
 	margin-top: 0px;
@@ -80,8 +102,8 @@ div.leftcom
 	border-bottom-left-radius: 9px; 
 	background-color: #4D4D4D;
 	width: 400px;
-	height: 70px;
-	overflow: auto;
+	height: 103px;
+	overflow: hidden;
 	position: relative;
 	margin-top: 0px;
 	float: left;
