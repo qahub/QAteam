@@ -19,6 +19,8 @@
 </head>
 <body>
   <div id='headerBar'>
+	<div id="logo"></div>
+	<div id="topic"></div>
 	<?php if(empty($_SESSION['uid'])){  ?>
 		<img class='icon' id='fb_link' src="images/signup/signup-FB-01.png">
 	<?php }else{ 
@@ -38,6 +40,8 @@
 
   </nav>
   <div id="page"></div>
+  <div id="register">
+  </div>
 
 </body>
 </html>

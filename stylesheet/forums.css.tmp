@@ -1,0 +1,134 @@
+* {
+	font-family: "centry goth";
+}
+
+div#forums
+{
+	text-align: center;
+	width: 50%;
+}
+
+div#allComment
+{
+	width: auto;
+}
+
+div.comment
+{
+	overflow: auto;
+	margin: 0 auto;
+	/*background-color: #FFFF00;*/
+	width: 450px;
+	margin-top: 25px;
+}
+
+div.com
+{
+	width: auto;
+	margin-right: 100px;
+}
+
+div.name_n_date
+{
+	width: auto;
+	margin-right: 100px;
+}
+
+span
+{
+	font: "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
+	color: #FFF;
+}
+
+span.name
+{
+	font-size: 30px;
+}
+
+span.grade
+{
+	color: #000;
+	position: relative;
+	top: 5px;
+	width: 60px;
+}
+
+span.scoreButton
+{
+	color: #000;
+	position: relative;
+	top: 15px;
+	width: 60px;
+}
+
+div.rightcom
+{
+	border-top-right-radius: 9px; 
+	border-bottom-right-radius: 9px; 
+	background-color: #CDCDCD; 
+	height: 70px;
+	width: 50px;
+	position: relative;
+	margin-top: 0px;
+	float: right;
+}
+
+div.leftcom
+{
+	border-top-left-radius: 9px; 
+	border-bottom-left-radius: 9px; 
+	background-color: #4D4D4D;
+	width: 400px;
+	height: 70px;
+	overflow: auto;
+	position: relative;
+	margin-top: 0px;
+	float: left;
+}
+
+#arrow-new
+{ 
+	position: relative;
+	top: 10px;
+	left: 10%;
+
+	width:0px; 
+	height:0px; 
+	border-style:solid;
+	border-top-width: 25px;
+	border-bottom-width: 25px;
+	border-right-width: 0px;
+	border-left-width: 80px; 
+	border-color:transparent transparent transparent #4D4D4D;
+	border-style:dashed dashed dashed solid; 
+
+}
+
+#down
+{
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+
+	height: 70px;
+	width: 100%;
+
+	background-color: #000;
+}
+
+p#new
+{
+	color: #FFF;
+	font-size: 20px;
+	font: "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
+}
+
+#arrow-text
+{
+	position: absolute;
+	top: 0px;
+	left: 10%;
+
+	width: 20px;
+	height: 20px;
+}

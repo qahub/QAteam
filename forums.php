@@ -1,27 +1,33 @@
+<?php
+
+	session_start();
+
+?>
+
 <html>
 <head>
-<meta charset='utf8' />
 <link href="stylesheet/forums.css" rel="stylesheet" type="text/css"></link>
 <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
 <script src="js/commentFunc.js"></script>
 <script>
 
-	var uid = '123123';
-	var username = 'Jax';
-	var fration = 0;
+	var uid = "<?php echo $_SESSION['uid'];?>";
+	var username = "<?php echo $_SESSION['username'];?>";
+	var fration = <?php echo $_GET['fration']; ?>;
 	var topic = 'Nuclear';
 	var table = 1;
 
 	$(document).ready(function() {
 
-		loadAllComment(0, 'Nuclear', 1);
+		loadAllComment(fration, 'Nuclear', 1);
 
 		$('#input_comment_area').keydown(function(event){inputKeyDown(event, uid, username, fration, topic, table)});
 
 	});
 
 </script>
+<meta charset='UTF-8' />
 </head>
 
 <style>

@@ -44,4 +44,16 @@ $(document).ready( function () {
 
 	});
 
+	$('#black').click(function() {
+
+		link('forums.php?fration=0');
+
+	});
+
+	$('#white').click(function() {
+
+		link('forums.php?fration=1');
+
+	});
+
 });

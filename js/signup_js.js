@@ -1,11 +1,39 @@
-function checkUser(id, username, type){
+function getSomeInformation(id, username){
 
-	$.ajax({
-		url: 'qa_cgi/signup.php',
+	$('body').append("
+			<div id='regiser'>
+			<div id='explain'>選擇你想要加入討論的陣營</div>
+			<div id='item'>
+				<ol class='frationItem'><input type='radio' name='fraRadio' value='0'>正方</ol>
+				<ol class='frationItem'><input type='radio' name='fraRadio' value='2' checked>中立方</ol>
+				<ol class='frationItem'><input type='radio' name='fraRadio' value='1'>反方</ol>
+			</div>
+			<div id='button'>
+				<span id='regButton' class='button' onclick='firstLogin("+id+","+username+")'>送出</span>
+				<span id='cancelButton' class='button' onclick='cancel()'>取消</span>
+			</div>
+			</div>
+		");
+
+}
+
+function cancel(){
+
+	$('#register').remove();
+
+}
+
+function checkUser(){
+
+	$.ajax
+		url: 'qa_cgi/loginCheck.php',
 		type: 'POST',
-		data: { uid: id, username: username, type: type },
-		success: function(response){
-			 document.location.href="index.php";
+		success: function(data){
+			if(data.result){
+			 	document.location.href="index.php";
+			}else{ 
+				getSomeInformation(data.uid, data.username);	
+			}
 		},
 		error: function(xhr, ajaxOptions, thrownError){
 			alert('ajax error');
@@ -13,6 +41,32 @@ function checkUser(id, username, type){
 			console.log(ajaxOptions);
 			console.log(throwError);
 		}
+
+	});
+
+}
+
+function firstLogin(_uid, _username){
+
+	var _fration = $("input[name$='fraRadio']").val();
+	$.ajax({
+
+		url: "qa_cgi/register.php",
+		type: "POST",
+		data: { uid : _uid, username : _username, fration : _fration },
+		dataType: "json",
+		success: function() {
+
+			$('#register').remove();
+			document.location.href="index.php";
+
+		},
+		error: function(xhr) {
+
+			alert(xhr.status);
+
+		}
+
 
 	});
 
@@ -37,7 +91,7 @@ function logout(){
 	});
 
 }
-$(document).ready( function(){
+$(document).ready( function(){ 
 
 
 	$('#logout').click(logout);
@@ -52,7 +106,9 @@ $(document).ready( function(){
 		ref.parentNode.insertBefore(js,ref);
 	}(document));
 
-	$("#fb_link").click( function () {
+	$('#fb_link').click( function () { getSomeInformation(1,1,1); });
+
+	$("#sfb_link").click( function () {
 
 		window.fbAsyncInit = function() {
 			FB.init({
@@ -65,31 +121,31 @@ $(document).ready( function(){
 		}();
 		FB.getLoginStatus(function(response) {
 
-			if(response.status == "not_authorized"){
+			if(response.status == "connected"){
+
+				if(response.authResponse){
+					FB.api('/me', function(response){
+						checkUser();
+					});
+				}else{
+					alert('login error!');
+				}
+			}
+			else if(response.status == "not_authorized"){
 
 				FB.login(function(response){
 					if(response.authResponse){
-						FB.api('/me', function(response){ checkUser(response.id, response.name, 'FB'); });
+						checkUser();
 					}else{
 						alert('login error!');
 					}
 				},{});
 
-			}else if(response.status == "connected"){
-
-				if(response.authResponse){
-					FB.api('/me', function(response){
-						checkUser(response.id, response.name, 'FB');
-					});
-				}else{
-					alert('login error!');
-				}
-
-			}else {
+			}else{    // no login
 
 				FB.login(function(response){
 					if(response.authResponse){
-						FB.api('/me', function(response){checkUser(response.id, response.name, 'FB');});
+						checkUser();
 					}else{
 						alert('login error!');
 					}
