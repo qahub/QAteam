@@ -41,14 +41,22 @@
 	padding-left: 1pt;
 
 }
+#custom {
+
+	position: absolute;
+	right: 0px;
+	width: 20%;
+	height: 100%;
+}
 
 #board {
-	 position:relative;
-	 top: 5%;
-	 margin:0px auto;
-	 width: 80%;
+	 position:absolute;
+	 top: 0%;
+	 margin:0px;
+	 width: 78%;
 	 height:100%;
 	 z-index: 0;
+	 overflow: scroll;
 }
 
 #right {
@@ -82,7 +90,7 @@
 
 
 #clock {
-	 position: fixed;
+	 position: absolute;
 	 width:15%;
 	 height:30%;
 	 top:5%;
@@ -176,7 +184,7 @@ nav {
 	top: 35%;
 	height: 193px;
 	width: 104%; 
-	padding: 0px 5px 0px 5px;
+	padding: 0px 0px 0px 0px;
 	background-color: #9FA0A0;
 	color: #222222;
 	z-index: 5;
@@ -190,11 +198,15 @@ nav:hover{
 }
 
 .middle{
-	
+	color: #ffffff;
 	position: absolute;
-	right: 5px;
-	top: 45%;
-
+	right: 0px;
+	top: 25%;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	transform: rotate(90deg);
+	font-size: 25pt;
+	width:50px;
 }
 
 #black {
@@ -202,6 +214,7 @@ nav:hover{
 	position: relative;
 	top: 13%;
 	left: 10%;
+
 
 }
 

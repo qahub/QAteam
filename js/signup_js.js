@@ -1,5 +1,5 @@
 function getSomeInformation(id, username){
-
+/*
 	$('body').append("
 			<div id='regiser'>
 			<div id='explain'>選擇你想要加入討論的陣營</div>
@@ -14,7 +14,7 @@ function getSomeInformation(id, username){
 			</div>
 			</div>
 		");
-
+*/
 }
 
 function cancel(){
@@ -25,7 +25,7 @@ function cancel(){
 
 function checkUser(){
 
-	$.ajax
+	$.ajax({
 		url: 'qa_cgi/loginCheck.php',
 		type: 'POST',
 		success: function(data){
@@ -106,9 +106,8 @@ $(document).ready( function(){
 		ref.parentNode.insertBefore(js,ref);
 	}(document));
 
-	$('#fb_link').click( function () { getSomeInformation(1,1,1); });
 
-	$("#sfb_link").click( function () {
+	$("#fb_link").click( function () {
 
 		window.fbAsyncInit = function() {
 			FB.init({

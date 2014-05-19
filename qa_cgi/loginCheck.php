@@ -25,7 +25,7 @@
 			$username = $user_profile['name'];
 			$uid = $user_profile['id'];
 
-			$user = new User($username,$uid);
+			$user = new User($username,$uid,0);
 			$checkResult = $user->checkUserIfNotAdd();
 			if($checkResult){
 				$userdata = $user->getUserData();

@@ -3,12 +3,23 @@
 	height: 100%;
 	width: 100%;
 	z-index: -1;
-
-	background: #000 url(../images/signup/signup_back.png) center center fixed no-repeat;
+	background: center center fixed no-repeat;
+	background-image: url('../images/signup/signup_back.png');
 	-moz-background-size: cover;
 	background-size: cover;
 }
+#mark
+{
+	position: absolute;
+	z-index: 1;
 
+	width: auto;
+	height: auto;
+
+	top: 35%;
+	left: 17%;
+	
+}
 #container
 {
 	position: absolute;
@@ -17,32 +28,43 @@
 	width: auto;
 	height: auto;
 
-	top: 10%;
+	top: 35%;
+	left: 55%;
+	
+}
+#signal
+{
+	position: absolute;
+	z-index: 1;
+
+	width: auto;
+	height: auto;
+
+	top: 35%;
+	right: 15%;
+	
+}
+#but
+{
+	position: absolute;
+	z-index: 1;
+
+	width: auto;
+	height: auto;
+
+	top: 65%;
 	left: 55%;
 	
 }
 
-input
+
+t
 {
-	height: 30px;
-	width: 250px;
-
-	border: 0px ;
-	border-radius: 3px;
-	background: #CCCCCC;
+    font: normal 20px "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
 }
-
-img
-{
-	height: 40px;
-	width: 40px;
-
-	border-radius: 10px;
-}
-
 p
 {
-	font: normal 40px "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
+	font: normal 60px "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
 }
 
 .icon {
@@ -60,7 +82,13 @@ p
 
 .icon:active {
 
-	padding-top: 1pt;
-	padding-left: 1pt;
+	border: solid 1px #000000;
+
+}
+
+.intro {
+
+	width: 100px;
+	height: 100px;
 
 }

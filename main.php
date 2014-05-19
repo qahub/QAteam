@@ -2,13 +2,14 @@
 
 	require "qa_cgi/connect.php";
 	$topic = "Nuclear";
-
+	session_start();
 ?>
 
 <html>
 <head>
 	<script src="js/jcanvas.js"></script>
 	<script src="js/addCircle.js"></script>
+	<script src="js/freeTalk.js"></script>
 	<script>
 	var openAll = openSet('<?php echo $topic; ?>');
 	var leftCircle = circleSet();
@@ -26,6 +27,18 @@
 	}
 
 ?>
+
+	$(document).ready(function() {
+
+		var uid = "123123"; //"<?php echo $_SESSION['uid'];?>";
+		var username = "Jax"; //"<?php echo $_SESSION['username'];?>";
+		var topic = "<?php echo $topic;?>"; 
+
+		loadAllFreeTalk(topic);
+		$('#input_talk_area').keydown(function(event){inputKeyDown(event, uid, username, topic)});
+
+	});
+
 	</script>
 
 </head>
@@ -39,10 +52,20 @@
 		<div id="right"></div>
 		<div id="left"></div>
 		<div id="clock">
-		<canvas id="blackTriangle" width='100px' height='100px' ></canvas>
-		<canvas id="grayTriangle" width='100px' height='100px' ></canvas>
+			<canvas id="blackTriangle" width='100px' height='100px' ></canvas>
+			<canvas id="grayTriangle" width='100px' height='100px' ></canvas>
 		</div>
 	  <div id="leftboard"></div>	
 	  <div id="rightboard"></div>
+	 </div>
+	 <div id="custom">
+		<div id="customTop"></div>
+		<div id="freeTalk">
+			<div class='talkBlock'><span class='username'>Jax: </span><span class='talk'>Hello world!</span></div>
+			<div class='talkBlock'><span class='username'>Jax: </span><span class='talk'>Hello world!</span></div>
+			<div class='talkBlock'><span class='username'>Jax: </span><span class='talk'>Hello world!</span></div>
+		</div>
+		<textarea id='input_talk_area'></textarea>
+		<footer></footer>
 	 </div>
 </html>	

@@ -18,6 +18,7 @@
 	<meta charset="UTF-8" />
 </head>
 <body>
+<!--
   <div id='headerBar'>
 	<div id="logo"></div>
 	<div id="topic"></div>
@@ -27,6 +28,7 @@
 		echo "<div id='user'>Welcome $username !! <span id='logout'>Logout</span></div>";
 	}?>
   </div>
+-->
   <nav>  	
  	<div class='middle'>
 		MENU
