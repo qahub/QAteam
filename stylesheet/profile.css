@@ -41,20 +41,62 @@
 	padding-left: 1pt;
 
 }
-#custom {
-
+#freetalk
+{
+   height:70%;
+   overflow: scroll;
+}
+#titleft
+{
+   position:absolute;
+   font-size:30px;
+   left:30%;
+      
+}
+#headpic
+{
 	position: absolute;
 	right: 0px;
 	width: 20%;
-	height: 100%;
+	height: 10%;    
+}
+#custom {
+
+
+	position: absolute;
+	background-color:#E9E9E9;
+	right: 0px;
+	top: 15%;
+	width: 20%;
+	height: 75%;
+}
+#input_talk_area
+{
+    height:auto;
+    width:100%;
+	resize:none;
+}
+.boticon
+{
+    position:absolute;
+    left:25%;
 }
 
+#foot
+{
+	position: absolute;
+	right: 0px;
+	top:90%;
+	width: 20%;
+	height: 9%;    
+	overflow: hidden;
+}
 #board {
 	 position:absolute;
 	 top: 0%;
 	 margin:0px;
 	 width: 78%;
-	 height:100%;
+	 height:99%;
 	 z-index: 0;
 	 overflow: scroll;
 }
@@ -249,12 +291,11 @@ nav:hover{
 
 }
 
-#regiter {
-
-	position: fixed;
-	top: 10px;
-	right: 20px;
-	width: 500px;
-	height: 350px;
+.talkBlock {
+	
+	position: relative;
+	margin-top: 5px;
+	left: 20px;
 
 }
+

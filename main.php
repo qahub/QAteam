@@ -2,7 +2,7 @@
 
 	require "qa_cgi/connect.php";
 	$topic = "Nuclear";
-	session_start();
+
 ?>
 
 <html>
@@ -29,13 +29,11 @@
 ?>
 
 	$(document).ready(function() {
-
-		var uid = "123123"; //"<?php echo $_SESSION['uid'];?>";
-		var username = "Jax"; //"<?php echo $_SESSION['username'];?>";
-		var topic = "<?php echo $topic;?>"; 
-
+		var uid='123123';
+		var username="Jax";
+		var topic="<?php echo $topic;?>";
 		loadAllFreeTalk(topic);
-		$('#input_talk_area').keydown(function(event){inputKeyDown(event, uid, username, topic)});
+		$('#input_talk_area').keydown(function(event){inputKeyDown(event, uid, username,topic)});
 
 	});
 
@@ -58,14 +56,19 @@
 	  <div id="leftboard"></div>	
 	  <div id="rightboard"></div>
 	 </div>
+	 <div id="headpic">
+	 </div>
 	 <div id="custom">
 		<div id="customTop"></div>
-		<div id="freeTalk">
-			<div class='talkBlock'><span class='username'>Jax: </span><span class='talk'>Hello world!</span></div>
-			<div class='talkBlock'><span class='username'>Jax: </span><span class='talk'>Hello world!</span></div>
-			<div class='talkBlock'><span class='username'>Jax: </span><span class='talk'>Hello world!</span></div>
+		<div id="titleft"> Free talk</div>
+			<br /><br />
+		<div id="freeTalk" >
 		</div>
+		<HR>
 		<textarea id='input_talk_area'></textarea>
 		<footer></footer>
+	 </div>
+	 <div id="foot">
+	     <img class="boticon" src='images/mainpage/image.png'></img>
 	 </div>
 </html>	

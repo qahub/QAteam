@@ -8,7 +8,7 @@
 ?>
 		<div class='talkBlock'>
 			<span class='username'><?php echo $crow['username']; ?>: </span>
-			<span class='talk'><?php echo $crow['talk']; ?></span>
+			<span class='talk'><?php echo nl2br($crow['talk']); ?></span>
 		</div>
 
 
