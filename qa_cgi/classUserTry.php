@@ -5,12 +5,12 @@ class User {
 	var $id;
 	var $name;
 	var $uid;
-	var $type;
+	var $fration;
 
-	function __construct($_name, $_uid, $_type){
+	function __construct($_name, $_uid, $_fration){
 		$this->name = $_name;
 		$this->uid = $_uid;
-		$this->type = $_type;
+		$this->fration = $_fration;
 	}
 
 
@@ -25,7 +25,7 @@ class User {
 
 	}
 	private function insertIntoDB(){
-		$insertQuery = mysql_query("INSERT INTO `users`(`oauth_uid`, `username`, `type`) VALUES('$this->uid', '$this->name', '$this->type')") or die(mysql_error());
+		$insertQuery = mysql_query("INSERT INTO `users`(`oauth_uid`, `username`, `fration`) VALUES('$this->uid', '$this->name', '$this->fration')") or die(mysql_error());
 
 	}
 	public function getUserData(){
