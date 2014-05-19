@@ -2,14 +2,14 @@
 
 	require "qa_cgi/connect.php";
 	$topic = "Nuclear";
-
+	session_start();
 ?>
 
 <html>
 <head>
 	<script src="js/jcanvas.js"></script>
 	<script src="js/addCircle.js"></script>
-	<script src="freeTalk.js"></script>
+	<script src="js/freeTalk.js"></script>
 	<script>
 	var openAll = openSet('<?php echo $topic; ?>');
 	var leftCircle = circleSet();
@@ -30,8 +30,12 @@
 
 	$(document).ready(function() {
 
-		loadAllFreeTalk(fration, 'Nuclear', 1);
-		$('#input_talk_area').keydown(function(event){inputKeyDown(event, uid, username)});
+		var uid = "123123"; //"<?php echo $_SESSION['uid'];?>";
+		var username = "Jax"; //"<?php echo $_SESSION['username'];?>";
+		var topic = "<?php echo $topic;?>"; 
+
+		loadAllFreeTalk(topic);
+		$('#input_talk_area').keydown(function(event){inputKeyDown(event, uid, username, topic)});
 
 	});
 
