@@ -103,6 +103,5 @@
 	<img id='white' class='link' src='images/mainpage/goWhite.png' width="100px" height="120px" />
 	<?php } ?>
   </nav>
- 
 </body>
 </html>
