@@ -208,7 +208,7 @@ div.rightvote
 	border-top-width: 25px;
 	border-bottom-width: 25px;
 	border-right-width: 0px;
-	border-left-width: 85px; 
+	border-left-width: 100px; 
 	border-color:transparent transparent transparent #4D4D4D;
 	border-style:dashed dashed dashed solid; 
 }
@@ -225,7 +225,7 @@ div.rightvote
 	border-top-width: 25px;
 	border-bottom-width: 25px;
 	border-right-width: 0px;
-	border-left-width: 85px; 
+	border-left-width: 100px; 
 	border-color:transparent transparent transparent #4D4D4D;
 	border-style:dashed dashed dashed solid; 
 }
@@ -276,6 +276,16 @@ div.rightvote p
 	height: 20px;
 }
 
+#arrow-text:active p#new
+{
+	color: #4D4D4D;
+}
+
+.arrow_button:hover
+{
+	cursor: pointer;
+}
+
 #arrow-subtext
 {
 	position: absolute;
@@ -284,6 +294,11 @@ div.rightvote p
 
 	width: 20px;
 	height: 20px;
+}
+
+#arrow-subtext:active p#submit
+{
+	color: #4D4D4D;
 }
 
 #arrow-cantext
@@ -296,6 +311,10 @@ div.rightvote p
 	height: 20px;
 }
 
+#arrow-cantext:active p#cancel
+{
+	color: #4D4D4D;
+}
 
 textarea
 {

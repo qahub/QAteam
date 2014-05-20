@@ -30,8 +30,8 @@
 			//$("#arrow-new").remove();
 			$("#down").empty();
 			$("#down").append("<textarea id='reply'></textarea>");
-			$("#down").append("<div id='arr'> <div id='arrow-submit'></div> <div id='arrow-subtext'> <p id='submit'>submit</p> </div> </div>");
-			$("#down").append("<div id='arr2'> <div id='arrow-cancel'></div> <div id='arrow-cantext'> <p id='cancel'>cancel</p> </div> </div>");
+			$("#down").append("<div id='arr'> <div id='arrow-submit'></div> <div id='arrow-subtext' class='arrow_button'> <p id='submit'>submit</p> </div> </div>");
+			$("#down").append("<div id='arr2'> <div id='arrow-cancel'></div> <div id='arrow-cantext' class='arrow_button'> <p id='cancel'>cancel</p> </div> </div>");
 			$("#arrow-subtext").click(function(){uploadCommit(uid,username,fration,topic,table); });	
 			$("#arrow-cantext").click(function(){
 				$("#down").animate({
@@ -39,7 +39,7 @@
 					opacity:'1'
 				},1000);
 				$("#down").empty();
-				$("#down").append("	<div id='arrow-new'></div><div id='arrow-text'> <p id='new'>+new</p> </div>");
+				$("#down").append("	<div id='arrow-new'></div><div id='arrow-text' class='arrow_button'> <p id='new'>+new</p> </div>");
 				$("#arrow-text").click(newClick);
 			});
 		}
@@ -77,7 +77,7 @@
 <?php if($_SESSION['fration'] == $_GET['fration']) {?>
 <div id="down">
 	<div id="arrow-new"></div>
-	<div id="arrow-text"> <p id="new">+new</p> </div>
+	<div id="arrow-text" class="arrow_button"> <p id="new">+new</p> </div>
 </div>
 <?php } ?>
   <nav>  	
