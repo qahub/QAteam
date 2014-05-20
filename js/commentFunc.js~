@@ -118,7 +118,15 @@ function openSet(_topic, _fration, _table){
 			success: function(data){
 
 				$('#allContent').append(data.comment);
-				
+					$('#allmask').click(function(){
+	
+				$('#allmask').css("visibility","hidden");
+				$('#all').css("visibility","hidden");
+				$('#allTitle').html("");
+				$('#allContent').html("");
+			
+			});
+
 			},
 			error: function(xhr){
 				alert("ajax error");

@@ -76,6 +76,7 @@ function firstLogin(_uid, _username){
 			alert(xhr.status);
 
 		},
+
 		complete: function() {
 
 		}

@@ -54,15 +54,6 @@
 
 		$('#input_comment_area').keydown(function(event){inputKeyDown(event, uid, username, fration, topic, table)});
 		$("#arrow-text").click(newClick);
-		$('#allmask').click(function(){
-		
-			$('#allmask').css("visibility","hidden");
-			$('#all').css("visibility","hidden");
-			$('#allTitle').html("");
-			$('#allContent').html("");
-		
-		});
-
 
 	});
 

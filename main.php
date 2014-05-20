@@ -8,6 +8,7 @@
 
 <html>
 <head>
+	<meta charset='utf8' />
 	<link href="stylesheet/register.css" rel="stylesheet" />
 	<script src="js/jcanvas.js"></script>
 	<script src="js/addCircle.js"></script>

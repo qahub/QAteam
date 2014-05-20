@@ -30,7 +30,7 @@
 					</div>
 					<div class='com'>
 						<span class='comment'><?php echo $comment; ?></span>
-						<div class='more' onclick="openAllComment(<?echo $crow['id'];?>);">read more</div>
+						<div class='more' onclick="openAll(<?echo $crow['id'];?>);">read more</div>
 					</div>	
 				</div>
 				<div class='rightcom'>

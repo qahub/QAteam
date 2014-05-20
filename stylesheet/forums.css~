@@ -75,12 +75,6 @@ span.name
 	bottom: 10px;
 	right: 10px;
 
-}
-
-.more:hover {
-
-	cursor: pointer;
-	text-decoration: underline;
 
 }
 
