@@ -2,7 +2,7 @@
 
 		function openAll(_id){
 		
-			$('#mask').css("visibility","visible");
+			$('#allmask').css("visibility","visible");
 			$('#all').css("visibility","visible");
 
 			$.ajax({
@@ -134,9 +134,9 @@ $(document).ready(function (){
 		 rotate: 0
 	}).drawPolygon();
 	
-	$('#mask').click(function(){
+	$('#allmask').click(function(){
 	
-		$('#mask').css("visibility","hidden");
+		$('#allmask').css("visibility","hidden");
 		$('#all').css("visibility","hidden");
 		$('#allTitle').html("");
 		$('#allContent').html("");

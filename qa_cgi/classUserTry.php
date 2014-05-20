@@ -28,6 +28,12 @@ class User {
 		$insertQuery = mysql_query("INSERT INTO `users`(`oauth_uid`, `username`, `fration`) VALUES('$this->uid', '$this->name', '$this->fration')") or die(mysql_error());
 
 	}
+
+	public function updateDB($column, $value){
+
+		$updateQuery = mysql_query("UPDATE `users` SET `$column` = '$value' WHERE `oauth_uid` = '$this->uid'") or die(mysql_error());
+
+	}
 	public function getUserData(){
 
 		$query = mysql_query("SELECT * FROM `users` WHERE `oauth_uid` = '$this->uid'");
