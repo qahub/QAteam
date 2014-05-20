@@ -1,11 +1,19 @@
 <?php 
-
+	session_start();
 	require "connect.php";
 	$topic = $_GET['topic'];
 	$table = $_GET['table'];
-	if($_GET['fration'] == 0) $fration = 'Black';
+	if($_GET['fration'] == 2) $fration = 'Black';
 	else $fration = 'White';
+?>
 
+<script>
+	var topic = '<?php echo $topic; ?>';
+	var table = '<?php echo $table; ?>';
+	var fration = '<?php echo $fration; ?>';
+</script>
+
+<?php
 	$cquery = mysql_query("SELECT * FROM `5_".$fration.$topic.$table."` ORDER BY `grade` DESC") or die(mysql_error()); 
 	while(($crow = mysql_fetch_assoc($cquery)) != FALSE ) {
 ?>
@@ -21,18 +29,13 @@
 					</div>	
 				</div>
 				<div class='rightcom'>
-					<!--
-					<span class='grade'><?php echo $crow['grade']; ?></span>	
-					<span class='scoreButton' onclick='score(<?php echo $crow['id']; ?>, $(this).offset())'> score</span>	
-					-->
-					<span class="vote">vote</span>
-					<span class="minus">______________</span>
-					<div class="leftvote">
-						<p> 1 </p><p> 2 </p><p> 3 </p><p> 4 </p><p> 5 </p>
-					</div>
-					<div class="rightvote">
-						<p> -1 </p><p> -2 </p><p> -3 </p><p> -4 </p><p> -5 </p>
-					</div>
+				<?php if($_SESSION['fration']==$_GET['fration']){ ?>
+				<span class='vote' onclick="score(<?php echo $crow['id']; ?>, $(this).offset(),fration,topic,table);">vote</span>	
+				<?php }else{ ?>
+				<span class='vote'>vote</span>
+				<?php }?>
+				<span class="minus">______________</span>
+					<span class='grade _<?php echo $crow['id'];?>'><?php echo $crow['grade']; ?></span>	
 				</div>
 			</div>
 <?php } ?>

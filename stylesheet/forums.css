@@ -33,7 +33,7 @@ div.com
 	width: 90%;
 	height: 100px;
 	margin: 0 auto;
-	overflow:hidden;
+	overflow:scroll;
 }
 
 div.name_n_date
@@ -70,7 +70,7 @@ span.comment
 
 span.name
 {
-	font-size: 30px;
+	font-size: 25px;
 }
 
 span.grade
@@ -81,24 +81,39 @@ span.grade
 	width: 60px;
 }
 
-span.scoreButton
-{
-	color: #000;
-	position: relative;
-	top: 15px;
-	width: 60px;
-}
-
 span.vote
 {
 	color: #000;
 	font-size: 20px;
+	z-index: 3;
+}
+
+span.vote:hover
+{
+	border: 3px outset;
+	cursor: pointer;
+
+}
+
+span.vote:active
+{
+	border: 3px inset;
 }
 
 span.minus
 {
 	position: relative;
 	top: -15px;
+}
+
+span.grade
+{
+	position: relative;
+	top: 5px;
+	left: -3px;
+	font-size: 25pt;
+	font-style: italic;
+
 }
 
 div#hackpad

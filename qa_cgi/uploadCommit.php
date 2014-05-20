@@ -12,15 +12,9 @@
 
 	if(!(empty($comment))){
 
-		if($fration == 0){
 
-			$query = "INSERT INTO `5_Black".$topic.$table."`(`uid`, `comment`, `date`, `username`, `time`) VALUES('$uid', '$comment', '$date', '$username', '$time')";
+			$query = "INSERT INTO `5_".$fration.$topic.$table."`(`uid`, `comment`, `date`, `username`, `time`) VALUES('$uid', '$comment', '$date', '$username', '$time')";
 
-		}else{
-
-			$query = "INSERT INTO `5_White".$topic.$table."`(`uid`, `comment`, `date`, `username`, `time`) VALUES('$uid', '$comment', '$date', '$username', '$time')";
-
-		}
 
 		$result = mysql_query($query) or die(mysql_error());
 		echo json_encode(array( 'name' => $username, 'comment' => $comment, 'dateTime' => $date." ".$time));

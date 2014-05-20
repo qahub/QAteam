@@ -1,26 +1,12 @@
-function link(webName) {
-
-	$('#page').html();
-	$.ajax({
-
-		url: webName,
-		type: 'GET',
-		datatype: 'html',
-		success: function(data) {
-			$('#page').html(data);
-
-		},
-		error: function(xhr) {
-			alert('link error '+xhr.status);
-		}
-
-	});
-
-}
-
 function normalLink(webName){
 
 	document.location.href=webName;
+
+}
+
+function link(webName){
+
+	document.location.href='index.php?web='+webName;
 
 }
 
@@ -35,7 +21,6 @@ $(document).ready( function () {
 		$(this).stop(true,false).animate({'left' : '-100%'},500);
 
 	});
-
 
 	$('#aboutUs').click( function() {
 

@@ -1,25 +1,30 @@
-function getSomeInformation(id, username){
+ï»¿function getSomeInformation(id, username){
 /*
 	$('body').append("
-			<div id='regiser'>
-			<div id='explain'>¿ï¾Ü§A·Q­n¥[¤J°Q½×ªº°}Àç</div>
+			<div id='register'>
+			<div id='explain'>é¸æ“‡ä½ æƒ³è¦åŠ å…¥è¨è«–çš„é™£ç‡Ÿ</div>
 			<div id='item'>
-				<ol class='frationItem'><input type='radio' name='fraRadio' value='0'>¥¿¤è</ol>
-				<ol class='frationItem'><input type='radio' name='fraRadio' value='2' checked>¤¤¥ß¤è</ol>
-				<ol class='frationItem'><input type='radio' name='fraRadio' value='1'>¤Ï¤è</ol>
+				<ol class='frationItem'><input type='radio' name='fraRadio' value='2'>æ­£æ–¹</ol>
+				<ol class='frationItem'><input type='radio' name='fraRadio' value='0' checked>ä¸­ç«‹æ–¹</ol>
+				<ol class='frationItem'><input type='radio' name='fraRadio' value='1'>åæ–¹</ol>
 			</div>
 			<div id='button'>
-				<span id='regButton' class='button' onclick='firstLogin("+id+","+username+")'>°e¥X</span>
-				<span id='cancelButton' class='button' onclick='cancel()'>¨ú®ø</span>
+				<span id='regButton' class='button' onclick='firstLogin("+id+","+username+")'>é€å‡º</span>
+				<span id='cancelButton' class='button' onclick='cancel()'>å–æ¶ˆ</span>
 			</div>
 			</div>
 		");
 */
+	$('#page').append("<div id='mask'></div>");
+	$('#page').append("<div id='register'><div id='explain'>é¸æ“‡ä½ æƒ³è¦åŠ å…¥è¨è«–çš„é™£ç‡Ÿ</div><div id='item'><ol class='frationItem'><input type='radio' name='fraRadio' id='fraRadio' value='2'>æ­£æ–¹</ol><ol class='frationItem'><input type='radio' name='fraRadio' id='fraRadio' value='0' checked>ä¸­ç«‹æ–¹</ol><ol class='frationItem'><input type='radio' id='fraRradio' name='fraRadio' value='1'>åæ–¹</ol></div><div id='button'><div id='regButton' class='button'>é€å‡º</div><div id='cancelButton' class='button' onclick='cancel()'>å–æ¶ˆ</div></div></div>");
+	$('#mask').click(cancel);
+	$('#regButton').click(function(){firstLogin(id,username);});
 }
 
 function cancel(){
 
 	$('#register').remove();
+	$('#mask').remove();
 
 }
 
@@ -28,18 +33,20 @@ function checkUser(){
 	$.ajax({
 		url: 'qa_cgi/loginCheck.php',
 		type: 'POST',
+		dataType: 'json',
 		success: function(data){
 			if(data.result){
 			 	document.location.href="index.php";
 			}else{ 
-				getSomeInformation(data.uid, data.username);	
+				getSomeInformation(data.uid, data.username);
+				
 			}
 		},
 		error: function(xhr, ajaxOptions, thrownError){
 			alert('ajax error');
 			console.log(xhr.status);
 			console.log(ajaxOptions);
-			console.log(throwError);
+			console.log(thrownError);
 		}
 
 	});
@@ -48,7 +55,7 @@ function checkUser(){
 
 function firstLogin(_uid, _username){
 
-	var _fration = $("input[name$='fraRadio']").val();
+	var _fration = $("input[name='fraRadio']:checked").val();
 	$.ajax({
 
 		url: "qa_cgi/register.php",

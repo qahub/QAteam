@@ -29,7 +29,6 @@
 			$checkResult = $user->checkUserIfNotAdd();
 			if($checkResult){
 				$userdata = $user->getUserData();
-				echo $user->uid;
 				session_start();
 				$_SESSION['uid'] = $userdata['oauth_uid'];
 				$_SESSION['username'] = $userdata['username'];

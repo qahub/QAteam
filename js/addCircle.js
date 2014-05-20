@@ -33,7 +33,7 @@
 
 		var _count = 0;
 		function drawCircle(_topic, faction){
-			if(faction == 0){
+			if(faction == 2){
 				var tmpCount = _count;
 				$('#leftboard').append(" 			  \
 					<div id='pos"+_count+"' class='blackBorder'>						\
@@ -52,7 +52,7 @@
 				
 				$.ajax({
 					url: 'qa_cgi/loadQAData.php',
-					data: { topic: _topic, count: tmpCount, fration: 0 },
+					data: { topic: _topic, count: tmpCount, fration: 2 },
 					type: "GET",
 					dataType: "json",
 					success: function(data){

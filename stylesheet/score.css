@@ -1,0 +1,47 @@
+.votePart {
+
+	width: 100px;
+	height: 200px;
+	z-index: 5;
+	background-color: #0c0c0c;
+	border-radius: 10px;
+	opacity: 0.7;
+}
+
+.scoreButton {
+
+	color: #ffffff;
+	font-size: 16pt;
+	opacity: 1.0;
+
+}
+
+.scoreButton:hover {
+
+	cursor: pointer;
+	color: #11aac1;
+
+}
+
+.scoreButton:active {
+
+	padding-left: 1px;
+	padding-top: 1px;
+
+}
+
+.leftV {
+
+	position: absolute;
+	top: 30px;
+	left: 15px;
+}
+
+.rightV {
+
+	position: absolute;
+	top: 30px;
+	right: 20px;
+
+}
+

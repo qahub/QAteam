@@ -17,30 +17,13 @@
 	right: 10px;
 	
 }
+#fb_link {
 
-#fb_link{
-
-	position: absolute;
-	right: 10px;
-	height: 40px;
-	width: 40px;
-	border-radius: 10px;
-	opacity: 0.5;
-}
-
-#fb_link:hover {
-
-	cursor: pointer;
-	opacity: 1.0;
+	width: 150px;
+	height: 150px;
 
 }
 
-#fb_link:active {
-
-	padding-top: 1pt;
-	padding-left: 1pt;
-
-}
 #freetalk
 {
    height:70%;
@@ -276,6 +259,13 @@ nav:hover{
 
 }
 
+.logPart {
+
+	position: absolute;
+	text-decoration: none;
+	left: 45%; 
+}
+
 #home {
 
 	float: right;
@@ -290,6 +280,7 @@ nav:hover{
 	right: 14%;
 
 }
+
 
 .talkBlock {
 	

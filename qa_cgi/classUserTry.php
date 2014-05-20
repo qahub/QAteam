@@ -24,7 +24,7 @@ class User {
 		}
 
 	}
-	private function insertIntoDB(){
+	public function insertIntoDB(){
 		$insertQuery = mysql_query("INSERT INTO `users`(`oauth_uid`, `username`, `fration`) VALUES('$this->uid', '$this->name', '$this->fration')") or die(mysql_error());
 
 	}

@@ -1,6 +1,6 @@
 <?php
 	
-	require "connecnt.php";
+	require "connect.php";
 	require "classUserTry.php";
 
 	session_start();
@@ -16,5 +16,5 @@
 	$_SESSION['uid'] = $userData['oauth_uid'];
 	$_SESSION['username'] = $userData['username'];
 	$_SESSION['fration'] = $userData['fration'];
-
+ 
 ?>

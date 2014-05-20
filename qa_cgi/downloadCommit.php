@@ -9,7 +9,7 @@
 	$table = $_POST['table'];
 	$i = 0;
 
-	if( $fration == 0 ) {
+	if( $fration == 2 ) {
 		$query = "SELECT * FROM `5_Black".$topic.$table."` WHERE id > $nowNum";
 	} else {
 		$query = "SELECT * FROM `5_White".$topic.$table."` WHERE id > $nowNum";
