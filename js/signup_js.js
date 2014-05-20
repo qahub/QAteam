@@ -77,7 +77,7 @@ function firstLogin(_uid, _username){
 
 		},
 		complete: function() {
-			startspin()
+			startspin();
 		}
 
 
