@@ -98,7 +98,6 @@ span.vote
 	margin: 0 auto;
 	color: #000;
 	font-size: 20px;
-	z-index: 3;
 }
 
 span.vote:hover
