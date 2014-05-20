@@ -181,7 +181,7 @@ function startspin(){
 	  corners: 0.9, // Corner roundness (0..1)
 	  rotate: 82, // The rotation offset
 	  direction: 1, // 1: clockwise, -1: counterclockwise
-	  color: '#000', // #rgb or #rrggbb or array of colors
+	  color: '#AAA', // #rgb or #rrggbb or array of colors
 	  speed: 2.2, // Rounds per second
 	  trail: 60, // Afterglow percentage
 	  shadow: false, // Whether to render a shadow
