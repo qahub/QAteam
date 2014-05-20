@@ -39,7 +39,15 @@ div.com
 div.name_n_date
 {
 	width: auto;
-	margin-right: 100px;
+	height: 40px;
+	margin-left: 5px;
+	margin-top: 10px;
+}
+
+span.dateTime
+{
+	position: absolute;
+	right: 15px;
 }
 
 span
@@ -70,6 +78,8 @@ span.comment
 
 span.name
 {
+	position: absolute;
+	left: 15px;
 	font-size: 25px;
 }
 
