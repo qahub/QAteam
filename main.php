@@ -8,9 +8,11 @@
 
 <html>
 <head>
+	<link href="stylesheet/register.css" rel="stylesheet" />
 	<script src="js/jcanvas.js"></script>
 	<script src="js/addCircle.js"></script>
 	<script src="js/freeTalk.js"></script>
+	<script src="js/custom.js"></script>
 	<script>
 	var openAll = openSet('<?php echo $topic; ?>');
 	var leftCircle = circleSet();
@@ -35,13 +37,13 @@
 		var topic="<?php echo $topic;?>";
 		loadAllFreeTalk(topic);
 		$('#input_talk_area').keydown(function(event){inputKeyDown(event, uid, username,topic)});
-
+		$('#headpic').click( function(){ getSomeInformation(uid, username);});
 	});
 
 	</script>
 
 </head>
-	  <div id="mask"></div>
+	  <div id="allmask"></div>
 	  <div id="all">
 		<div id="allTitle"></div>
 		<div id="allContent"></div>
