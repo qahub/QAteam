@@ -10,6 +10,7 @@
 
 </head>
 <script type="text/javascript" src="http://fgnass.github.io/spin.js/spin.min.js">
+$(document).ready(function() {
 	var opts = {
 	  lines: 17, // The number of lines to draw
 	  length: 35, // The length of each line
@@ -30,6 +31,7 @@
 	};
 	var target = document.getElementById('signal');
 	var spinner = new Spinner(opts).spin(target);
+});
 </script>
 <body>
 <div id="back">	
