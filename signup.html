@@ -10,8 +10,8 @@
 
 </head>
 <script type="text/javascript" src="http://fgnass.github.io/spin.js/spin.min.js"></script>
-<script>
-$(document).ready(function() {
+<script type="text/javascript">
+
 	var opts = {
 	  lines: 17, // The number of lines to draw
 	  length: 35, // The length of each line
@@ -30,8 +30,11 @@ $(document).ready(function() {
 	  top: '50%', // Top position relative to parent
 	  left: '50%' // Left position relative to parent
 	};
+	
+	var spinner = new Spinner(opts)
+$(document).ready(function() {
 	var target = document.getElementById('signal1');
-	var spinner = new Spinner(opts).spin(target);
+	spinner.spin(target);
 });
 </script>
 <body>
