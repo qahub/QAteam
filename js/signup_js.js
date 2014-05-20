@@ -49,7 +49,7 @@ function checkUser(){
 			console.log(thrownError);
 		},
 		complete: function() {
-			startspin();
+
 		}
 
 	});
@@ -77,7 +77,7 @@ function firstLogin(_uid, _username){
 
 		},
 		complete: function() {
-			startspin();
+
 		}
 
 
