@@ -16,7 +16,7 @@ div#forums
 
 div#allComment
 {
-	margin-bottom: 50px; 
+	margin-bottom: 100px; 
 	width: auto;
 }
 
@@ -353,9 +353,4 @@ div#arr2
 
 	height: 50px;
 	width: 50px;
-}
-
-div#empty
-{
-	height: 1000px;
 }
