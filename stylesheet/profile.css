@@ -43,6 +43,13 @@
 	width: 20%;
 	height: 10%;    
 }
+
+#headpic:hover
+{
+	cursor: pointer;
+	text-decoration: underline;
+
+}
 #custom {
 
 
