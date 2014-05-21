@@ -17,7 +17,7 @@ function loadAllComment(_fration, _topic, _table) {
 
 	});
 
-	setTimeout(function(){ loadAllComment(_fration, _topic, _table)}, 100000);
+	setTimeout(function(){ loadAllComment(_fration, _topic, _table)}, 10000);
 
 }
 
