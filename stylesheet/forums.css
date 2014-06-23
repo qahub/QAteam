@@ -350,3 +350,15 @@ div#arr2
 	height: 50px;
 	width: 50px;
 }
+
+div#profile
+{
+	position: fixed;
+
+	background-color: #000;
+
+	z-index: 999;
+
+	height: 50%;
+	width: 50%;
+}

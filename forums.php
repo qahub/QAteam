@@ -63,6 +63,11 @@
 		
 		});
 
+		$('span.name').click(function(){
+
+			$('body').append("<div class='profile'></div>")
+		});
+
 
 	});
 
