@@ -37,7 +37,7 @@ function checkUser(){
 		success: function(data){
 			$('#loader').remove();
 			if(data.result){
-			 	document.location.href="index.php";
+				 document.location.href="index.php";
 			}else{ 
 				getSomeInformation(data.uid, data.username);
 				
@@ -51,7 +51,7 @@ function checkUser(){
 		},
 		beforeSend: function() {
 			$('#page').append("<div id='mask'></div>");
-			$('#page').append("<section id='loader'><div class='loader'></div></section>");
+			$('#loader').css("visibility", "visible");
 		}
 
 	});
