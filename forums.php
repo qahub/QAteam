@@ -65,7 +65,7 @@
 
 		$('span.name').click(function(){
 
-			$('body').append("<div class='profile'></div>")
+			$('body').append("<div class='profile'></div>");
 		});
 
 
