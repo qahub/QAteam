@@ -10,6 +10,7 @@
 	$fration = $_POST['fration'];
 	$table = $_POST['table'];
 	$tableName = "5_".$fration.$topic.$table."_".$qid;
+	$reply = $_POST['reply'];
 	$date = date('Ymd');
 	$time  = date('H:i:s', time());
 

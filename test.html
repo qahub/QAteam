@@ -1,0 +1,101 @@
+
+<html>
+<head>
+<link href="stylesheet/forums.css" rel="stylesheet" type="text/css"></link>
+<link href="stylesheet/profile.css" rel="stylesheet" />
+<link href="stylesheet/score.css" rel="stylesheet" />
+<link href="stylesheet/allComPanel.css" rel="stylesheet" />
+ <link href="plugin/prefectScrollBar/perfect-scrollbar.css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-2.1.0.min.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.js" type="text/javascript"></script>
+<script src="plugin/prefectScrollBar/jquery.mousewheel.js"></script>
+<script src="plugin/prefectScrollBar/perfect-scrollbar.js"></script>
+
+<script>
+
+
+	$(document).ready(function() {
+
+
+		$('#input_comment_area').keydown(function(event){inputKeyDown(event, uid, username, fration, topic, table)});
+		$('#allmask').click(function(){
+		
+			$('#allmask').css("visibility","hidden");
+			$('#all').css("visibility","hidden");
+			$('#allTitle').html("");
+			$('#allContent').html("");
+		
+		});
+
+	});
+
+	$(document).ready(function(){
+
+		$('#all').css('visibility',"visible");
+		$('#allmask').css("visibility","visible");
+		$('#allContent').perfectScrollbar({
+          wheelSpeed: 20,
+          wheelPropagation: false
+        });
+		$('#allReply').perfectScrollbar({
+          wheelSpeed: 20,
+          wheelPropagation: false
+        });
+	})
+    
+
+</script>
+<meta charset='UTF-8' />
+</head>
+
+<body>
+
+  <div id="allmask"></div>
+  <div id="all">
+  	<span id="allLeft">
+  		<div id="allAuthor">Jia-Xuan Liu</div>
+		<div id="allContent"> 災害、危害，大自然一開始都沒有這種定義。這些都是以人類的角度來看，那些會危及人類社會系統的事情，都將是一個危害。人們對於模糊且無法預期的事物總是充滿恐懼，恐懼造成政經秩序的動盪，再來影響了整個社會系統的穩定性。所以我們對於防災的措施及政策不能不謹慎制定及徹底實行。災害、危害，大自然一開始都沒有這種定義。這些都是以人類的角度來看，那些會危及人類社會系統的事情，都將是一個危害。人們對於模糊且無法預期的事物總是充滿恐懼，恐懼造成政經秩序的動盪，再來影響了整個社會系統的穩定性。所以我們對於防災的措施及政策不能不謹慎制定及徹底實行。災害、危害，大自然一開始都沒有這種定義。這些都是以人類的角度來看，那些會危及人類社會系統的事情，都將是一個危害。人們對於模糊且無法預期的事物總是充滿恐懼，恐懼造成政經秩序的動盪，再來影響了整個社會系統的穩定性。所以我們對於防災的措施及政策不能不謹慎制定及徹底實行。災害、危害，大自然一開始都沒有這種定義。這些都是以人類的角度來看，那些會危及人類社會系統的事情，都將是一個危害。人們對於模糊且無法預期的事物總是充滿恐懼，恐懼造成政經秩序的動盪，再來影響了整個社會系統的穩定性。所以我們對於防災的措施及政策不能不謹慎制定及徹底實行。災害、危害，大自然一開始都沒有這種定義。這些都是以人類的角度來看，那些會危及人類社會系統的事情，都將是一個危害。人們對於模糊且無法預期的事物總是充滿恐懼，恐懼造成政經秩序的動盪，再來影響了整個社會系統的穩定性。所以我們對於防災的措施及政策不能不謹慎制定及徹底實行。</div>
+	</span>
+	<span id="line"></span>
+	<span id="allRight">
+		<div id="allReply">
+			<div class="eachReply">
+				<div class="replyName">Jia-Xuan Liu</div>
+				<div class="replyContent">防災的措施及政策不能不謹慎制定及徹底實</div>
+				<div class="replyLine"></div>
+			</div>
+			<div class="eachReply">
+				<div class="replyName">Jia-Xuan Liu</div>
+				<div class="replyContent">防災的措施及政策不能不謹慎制定不謹慎制定不謹慎制定及徹底實</div>
+				<div class="replyLine"></div>				
+			</div>
+			<div class="eachReply">
+				<div class="replyName">Jia-Xuan Liu</div>
+				<div class="replyContent">防災的措施及政策不能不謹慎制定不謹慎制定不謹慎制定及徹底實</div>
+				<div class="replyLine"></div>
+			</div>
+			<div class="eachReply">
+				<div class="replyName">Jia-Xuan Liu</div>
+				<div class="replyContent">防災的措施及政策不能不謹慎制定不謹慎制定不謹慎制定及徹底實</div>
+				<div class="replyLine"></div>				
+			</div>
+			<div class="eachReply">
+				<div class="replyName">Jia-Xuan Liu</div>
+				<div class="replyContent">防災的措施及政策不能不謹慎制定不謹慎制定不謹慎制定及徹底實</div>
+				<div class="replyLine"></div>				
+			</div>
+			<div class="eachReply">
+				<div class="replyName">Jia-Xuan Liu</div>
+				<div class="replyContent">防災的措施及政策不能不謹慎制定不謹慎制定不謹慎制定及徹底實</div>
+				<div class="replyLine"></div>				
+			</div>												
+		</div>
+		<div id="replyPart">
+			<img id="replyButton" src="images/forumns/reply.png" />
+			<textarea id="replyArea" placeholder="給點意見吧 !"></textarea>
+		</div>
+	</span>
+
+  </div>
+</body>
+</html>
