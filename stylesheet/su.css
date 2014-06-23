@@ -8,6 +8,13 @@
 	-moz-background-size: cover;
 	background-size: cover;
 }
+#loader {
+
+	position: absolute;
+	z-index: 5;
+	top: 50%;
+	left: 50%;
+}
 #mark
 {
 	position: absolute;
@@ -113,7 +120,7 @@ p
         left: -1.5em;
     }
     .loader {
-    	z-index: 2;
+		z-index: 6;
         text-indent: -9999em;
         margin: 8em auto;
         position: relative;

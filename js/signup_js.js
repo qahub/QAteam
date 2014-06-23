@@ -35,7 +35,7 @@ function checkUser(){
 		type: 'POST',
 		dataType: 'json',
 		success: function(data){
-			$('section').remove();
+			$('#loader').remove();
 			if(data.result){
 			 	document.location.href="index.php";
 			}else{ 
@@ -49,9 +49,9 @@ function checkUser(){
 			console.log(ajaxOptions);
 			console.log(thrownError);
 		},
-		complete: function() {
+		beforeSend: function() {
 			$('#page').append("<div id='mask'></div>");
-			$('body').append("<section><div class='loader'></div></section>");
+			$('#page').append("<section id='loader'><div class='loader'></div></section>");
 		}
 
 	});

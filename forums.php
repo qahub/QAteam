@@ -17,6 +17,7 @@
 <script src="plugin/prefectScrollBar/perfect-scrollbar.js"></script>
 <script src="js/commentFunc.js"></script>
 <script src="js/link.js"></script>
+<script src="js/signup_js.js"></script>
 
 <script>
 
