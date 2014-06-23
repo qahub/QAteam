@@ -3,25 +3,20 @@
 	require "connect.php";
 	$topic = $_GET['topic'];
 	$table = $_GET['table'];
-	if($_GET['fration'] == 2) $fration = 'Black';
-	else $fration = 'White';
+	$fration = $_GET['fration'];
 	$qid = $_GET['qid'];
 	$tableName = "5_".$fration.$topic.$table."_".$qid;
 ?>
 
-<script>
-	var topic = '<?php echo $topic; ?>';
-	var table = '<?php echo $table; ?>';
-	var fration = '<?php echo $fration; ?>';
-</script>
-
 <?php
-	$cquery = mysql_query("SELECT * FROM `$tableName`") or die(mysql_error()); 
+	$i=0;
+	
+	$cquery = mysql_query("SELECT * FROM `$tableName`"); 
 	while(($crow = mysql_fetch_assoc($cquery)) != FALSE ) {
 ?>
 			<div class="eachReply">
-				<div class="replyName"><?php echo $cquery['username']; ?></div>
-				<div class="replyContent"><?php echo $cquery['reply']; ?></div>
+				<div class="replyName"><?php echo $crow['username']; ?></div>
+				<div class="replyContent"><?php echo $crow['reply']; ?></div>
 				<div class="replyLine"></div>
 			</div>
 

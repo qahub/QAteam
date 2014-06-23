@@ -102,7 +102,7 @@ function addScore(_score, _id, _fration, _topic, _table){
 
 }
 
-function openSet(_topic, _fration, _table){
+function openSet(e, _topic, _fration, _table){
 
 	function openAllComment(_id){
 	
@@ -119,9 +119,9 @@ function openSet(_topic, _fration, _table){
 
 				$('#allAuthor').append(data.username);
 				$('#allContent').append(data.comment);
-				$('#replyButton').click(function(){uploadCommit(_id, _fration, _topic, _table)});
+				$('#replyButton').click(function(){uploadReply(_id, _fration, _topic, _table)});
 				loadAllReply(_fration, _topic, _table, _id);
-				$('#replyArea').keydown(function(event){inputKeyDown(event,  _qid, _fration, _topic, _table)});
+				$('#replyArea').keydown(function(e){inputKeyDown(e, _id, _fration, _topic, _table);});
 				
 			},
 			error: function(xhr){
@@ -136,7 +136,7 @@ function openSet(_topic, _fration, _table){
 
 }
 
-function uploadCommit(_qid, _fration, _topic, _table){
+function uploadReply(_qid, _fration, _topic, _table){
 
 
 	var _reply = $('#replyArea').val();
@@ -151,11 +151,11 @@ function uploadCommit(_qid, _fration, _topic, _table){
 				$('#replyArea').val("");
 				$('#allReply').append("\
 						<div class='eachReply'> \
-							<div class='replyName'>"+data.uid+"</div>\
+							<div class='replyName'>"+data.username+"</div>\
 							<div class='replyContent'>"+data.reply+"</div>\
 							<div class='replyLine'></div>\
 						</div>\
-					");					
+					");
 
 			},
 			error: function(xhr,ajaxOptions, thrownError){
@@ -187,15 +187,13 @@ function loadAllReply(_fration, _topic, _table, _qid) {
 
 	});
 
-	setTimeout(function(){ loadAllComment(_fration, _topic, _table)}, 10000);
 
 }
 
 function inputKeyDown(e, _qid, _fration, _topic, _table){
 
-
 	if(e.which == 13 && !(e.shiftKey) ){ // if press Enter
-		uploadCommit(_qid, _fration, _topic, _table);
+		uploadReply(_qid, _fration, _topic, _table);
 	}
 
 }

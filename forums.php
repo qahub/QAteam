@@ -15,6 +15,9 @@
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.js" type="text/javascript"></script>
 <script src="plugin/prefectScrollBar/jquery.mousewheel.js"></script>
 <script src="plugin/prefectScrollBar/perfect-scrollbar.js"></script>
+<script src="js/commentFunc.js"></script>
+<script src="js/link.js"></script>
+
 <script>
 
 	var uid = "<?php echo $_SESSION['uid'];?>";
@@ -24,7 +27,7 @@
 	else if(fration == 1) var fra = 'White';
 	var topic = 'Nuclear';
 	var table = 1;
-	var openAllComment = openSet(topic, fra, 1);
+	var openAllComment = openSet(event, topic, fra, 1);
 	function newClick(){
 			$("#down").animate({
 				height:'100%',
@@ -33,13 +36,8 @@
 			//$("#arrow-new").remove();
 			$("#down").empty();
 			$("#down").append("<textarea id='reply'></textarea>");
-			$("#down").append("        \
-				<div id='arr'>         \
-					<div id='arrow-submit'></div>    \
-					<div id='arrow-subtext' class='arrow_button'> <p id='submit'>submit</p> </div> \
-				</div>  \
-			");
-			$("#down").append("<div id='arr2'> <div id='arrow-cancel'></div> <div id='arrow-cantext' class='arrow_button'> <p id='cancel'>cancel</p> </div> </div>"); \
+			$("#down").append("<div id='arr'><div id='arrow-submit'></div>					<div id='arrow-subtext' class='arrow_button'> <p id='submit'>submit</p> </div></div>");
+			$("#down").append("<div id='arr2'> <div id='arrow-cancel'></div> <div id='arrow-cantext' class='arrow_button'> <p id='cancel'>cancel</p> </div> </div>");
 			$("#arrow-subtext").click(function(){uploadCommit(uid,username,fration,topic,table); });	
 			$("#arrow-cantext").click(function(){
 				$("#down").animate({
@@ -63,9 +61,11 @@
 		
 			$('#allmask').css("visibility","hidden");
 			$('#all').css("visibility","hidden");
-			$('#allTitle').html("");
+			$('#allAuthor').html("");
 			$('#allContent').html("");
-		
+			$('#allReply').html("");
+			$('#replyPart').html("");
+			$('#replyPart').append("<img id='replyButton' src='images/forumns/reply.png' /><textarea id='replyArea' placeholder='給點意見吧 !'></textarea>");
 		});
 
 
@@ -136,7 +136,7 @@
 	</span>
 	<span id="line"></span>
 	<span id="allRight">
-		<div id="allComment"></div>
+		<div id="allReply"></div>
 		<div id="replyPart">
 			<img id="replyButton" src="images/forumns/reply.png" />
 			<textarea id="replyArea" placeholder="給點意見吧 !"></textarea>
