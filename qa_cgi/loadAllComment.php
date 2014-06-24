@@ -27,7 +27,9 @@
 			<div class='comment'>
 				<div class='leftcom'>
 					<div class='name_n_date'>
-						<span class='name' onclick="showProfile();"><?php echo $crow['username']; ?> </span>
+						<span class='name' onclick="showProfile();"><?php echo $crow['username']; ?> 
+							<p style="visibility:hidden"> <?php echo $crow['uid']; ?> </p>
+						</span>
 						<span class='dateTime'><?php echo $crow['date']." ".$crow['time']; ?></span>
 					</div>
 					<div class='com'>
