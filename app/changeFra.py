@@ -70,7 +70,7 @@ def output_and_change_fration(cursor,db) :
 	result = cursor.fetchone()
 	contentQ = result['comment']
 
-	cursor.execute("INSERT INTO `5_qaDataNuclear`(`contentA`, ,`contentQ`,`fration`) VALUES('"+str(contentA)+"','"+str(contentQ)+"', '"+nowFraNum+"')")
+	cursor.execute("INSERT INTO `5_qaDataNuclear`(`contentA`, ,`contentQ`,`fration`,`table`) VALUES('"+str(contentA)+"','"+str(contentQ)+"', '"+nowFraNum+"','"+nowTable+"')")
 	db.commit()
 	
 	nowTalbe += 1

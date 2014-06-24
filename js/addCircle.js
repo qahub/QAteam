@@ -1,7 +1,8 @@
 	function openSet(_topic){
 
-		function openAll(_id){
-		
+		function openAll(_id, _count){
+
+			_count++;
 			$('#allmask').css("visibility","visible");
 			$('#all').css("visibility","visible");
 
@@ -12,9 +13,11 @@
 				type: "GET",
 				dataType: "json",
 				success: function(data){
-
 					$('#contentA').append(data.content);
 					$('#contentQ').append(data.contentQ);
+					$('#toBoardButton').click(function() {
+						document.location.href = "forums.php?valid="+_count+"&fration="+data.fration+"&status='A'";
+					});
 
 				},
 				error: function(xhr){
@@ -58,7 +61,7 @@
 					success: function(data){
 						var summery = data.content;
 						summery = summery.substr(0,9);
-						var link = "...<br><a onclick='openAll("+data.id+")' class='link'>(詳全文)</a>";
+						var link = "...<br><a onclick='openAll("+data.id+","+tmpCount+")' class='link'>(詳全文)</a>";
 						$('#p_title'+tmpCount).append(data.title);
 						$('#p_content'+tmpCount).append(summery+link);
 
@@ -95,7 +98,7 @@
 					success: function(data){
 						var summery = data.content;
 						summery = summery.substr(0,9);
-						var link = "...<br><a onclick='openAll("+data.id+")' class='link'>(詳全文)</a>";
+						var link = "...<br><a onclick='openAll("+data.id+","+tmpCount+")' class='link'>(詳全文)</a>";
 						$('#n_title'+tmpCount).append(data.title);
 						$('#n_content'+tmpCount).append(summery+link);
 					},
