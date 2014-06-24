@@ -60,12 +60,8 @@
 			$('#all').css("visibility","hidden");
 			$('#allTitle').html("");
 			$('#allContent').html("");
+			$('#profile').css("visibility","hidden")
 		
-		});
-
-		$('span.name').click(function(){
-
-			$('body').append("<div class='profile'></div>");
 		});
 
 
@@ -123,5 +119,6 @@
   <div id="all">
 	<div id="allContent"></div>
   </div>
+  <div id='profile'></div>
 </body>
 </html>

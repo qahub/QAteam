@@ -353,12 +353,20 @@ div#arr2
 
 div#profile
 {
+	visibility: hidden;
+
 	position: fixed;
 
 	background-color: #000;
 
+	margin: 50px auto;
+	top: 0px; 
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+
 	z-index: 999;
 
-	height: 50%;
-	width: 50%;
+	height: 450px;
+	width: 300px;
 }

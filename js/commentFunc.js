@@ -1,5 +1,6 @@
 function loadAllComment(_fration, _topic, _table) {
 
+
 	$.ajax({
 
 		url: "qa_cgi/loadAllComment.php",
@@ -129,5 +130,13 @@ function openSet(_topic, _fration, _table){
 	
 	}
 	return openAllComment;
+
+}
+
+function showProfile()
+{
+	$('#profile').css("visibility","visible");
+	$('#allmask').css("visibility","visible");
+	
 
 }

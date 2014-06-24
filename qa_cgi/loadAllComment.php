@@ -10,7 +10,8 @@
 <script>
 	var topic = '<?php echo $topic; ?>';
 	var table = '<?php echo $table; ?>';
-	var fration = '<?php echo $fration; ?>';
+	var fration = '<?php echo $fration; ?>';	
+
 </script>
 
 <?php
@@ -25,7 +26,7 @@
 			<div class='comment'>
 				<div class='leftcom'>
 					<div class='name_n_date'>
-						<span class='name'><?php echo $crow['username']; ?> </span>
+						<span class='name' onclick="showProfile();"><?php echo $crow['username']; ?> </span>
 						<span class='dateTime'><?php echo $crow['date']." ".$crow['time']; ?></span>
 					</div>
 					<div class='com'>
@@ -43,5 +44,6 @@
 					<span class='grade _<?php echo $crow['id'];?>'><?php echo $crow['grade']; ?></span>	
 				</div>
 			</div>
+
 <?php } ?>
 
