@@ -456,3 +456,18 @@ img#logo
 	height: 100px;
 	width: 100px;
 }
+
+div#name p
+{
+	color: #FFF;
+}
+
+div.list span
+{
+	color: #FFF;
+}
+
+div#give p
+{
+	color: #FFF;
+}
