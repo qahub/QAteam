@@ -100,7 +100,7 @@
 	 <div id="headpic">
 		<?php if(!(empty($_SESSION['uid']))) { ?>
 			<?php echo $_SESSION['username'];?>
-			<img id = 'bighead' src='http://graph.facebook.com/UID/picture'></img>
+			<img id = 'bighead' src='images/profile/default.jpg'></img>
 		<?php } ?>
 
 	 </div>
