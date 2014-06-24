@@ -9,8 +9,8 @@ def getState(cursor, db) :
 	result = cursor.fetchall()
 	dict = {}
 	for row in result :
-		name = dict['name']
-		value = dict['value']
+		name = row['name']
+		value = row['value']
 		dict[name] = value
 
 	return dict
@@ -58,15 +58,13 @@ def output_and_change_fration(cursor,db) :
 	nowStatus = "A"
 
 	tableName = "5_" + nowFration + "Nuclear" + nowStatus + nowTable;
-	sql = "SELECT * FROM `"+tableName"` ORDER BY `grade` DESC")
-	cursor.execute(sql)
+	cursor.execute("SELECT * FROM `"+tableName+"` ORDER BY `grade` DESC")
 	result = cursor.fetchone()
 	contentA = result['comment']
 	
 	nowStatus = "Q"
 	tableName = "5_" + nowFration + "Nuclear" + nowStatus + nowTable;
-	sql = "SELECT * FROM `"+tableName"` ORDER BY `grade` DESC")
-	cursor.execute(sql)
+	cursor.execute("SELECT * FROM `"+tableName+"` ORDER BY `grade` DESC")
 	result = cursor.fetchone()
 	contentQ = result['comment']
 
@@ -99,9 +97,9 @@ def change_mode(cursor, db) :
 
 	row = getState(cursor, db)
 	if cmp(str(row['nowStatus']), "Q") :
-		setState(cursor, db, nowStatus, "A")
-	else if cmp(str(row['nowStatus']), "A") :
-		setState(cursor, db, nowStatus, "Q")
+		setState(cursor, db, "nowStatus", "A")
+	elif cmp(str(row['nowStatus']), "A") :
+		setState(cursor, db, "nowStatus", "Q")
 
 
 db = MySQLdb.connect(host="merry.ee.ncku.edu.tw", user="qateam", passwd="qateam01", db="qateam", cursorclass=MySQLdb.cursors.DictCursor)
@@ -109,9 +107,9 @@ cursor = db.cursor()
 
 #now = datetime.now()
 #standTime = now.second
-qTime = 60  #討論回答時間
-atime = 60  #討論問題時間
-wikiTime = 10 #共筆時間
+qTime = 60   
+aTime = 60   
+wikiTime = 10 
 
 
 #while (standTime % qTime) != 0:
@@ -122,9 +120,8 @@ wikiTime = 10 #共筆時間
 #print standTime
 
 while True:
-
-	time.sleep(qTime)
+	time.sleep(5)
 	change_mode(cursor, db)
-
+	print "chagne mode!"
 	time.sleep(aTime)
 	output_and_change_fration(cursor, db)
