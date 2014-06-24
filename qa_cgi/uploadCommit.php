@@ -7,13 +7,14 @@
 	$fration = $_POST['fration'];
 	$topic = $_POST['topic'];
 	$table = $_POST['table'];
+	$status = $_POST['status']
 	$date = date('Ymd');
 	$time  = date('H:i:s', time());
 
 	if(!(empty($comment))){
 
 
-			$query = "INSERT INTO `5_".$fration.$topic.$table."`(`uid`, `comment`, `date`, `username`, `time`) VALUES('$uid', '$comment', '$date', '$username', '$time')";
+			$query = "INSERT INTO `5_".$fration.$topic.$status.$table."`(`uid`, `comment`, `date`, `username`, `time`) VALUES('$uid', '$comment', '$date', '$username', '$time')";
 
 
 		$result = mysql_query($query) or die(mysql_error());

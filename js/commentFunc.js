@@ -1,4 +1,4 @@
-function loadAllComment(_fration, _topic, _table) {
+function loadAllComment(_fration, _topic, _table, _status) {
 
 
 	$.ajax({
@@ -6,7 +6,7 @@ function loadAllComment(_fration, _topic, _table) {
 		url: "qa_cgi/loadAllComment.php",
 		type: 'get',
 		dataType: 'html',
-		data: { topic : _topic, table : _table, fration : _fration },
+		data: { topic : _topic, table : _table, fration : _fration, status : _status },
 		success: function(data) {
 
 			$('#allComment').html(data);
@@ -18,11 +18,11 @@ function loadAllComment(_fration, _topic, _table) {
 
 	});
 
-	setTimeout(function(){ loadAllComment(_fration, _topic, _table)}, 10000);
+	setTimeout(function(){ loadAllComment(_fration, _topic, _table, _status)}, 10000);
 
 }
 
-function uploadCommit( _uid, _username, _fration, _topic, _table){
+function uploadCommit( _uid, _username, _fration, _topic, _table, _status){
 
 
 	var _comment = $('#reply').val();
@@ -32,7 +32,7 @@ function uploadCommit( _uid, _username, _fration, _topic, _table){
 			url: "qa_cgi/uploadCommit.php",
 			type: 'post',
 			dataType: 'json',
-			data: { uid : _uid, username : _username, comment : _comment, fration : _fration, topic : _topic, table : _table },
+			data: { uid : _uid, username : _username, comment : _comment, fration : _fration, topic : _topic, table : _table, status : _status },
 			success: function(data){
 				$('#input_comment_area').val("");
 				// $('#allComment').append("<div class='comment'><div class='name_n_date'><span class='name'>"+data.name+" </span><span class='dateTime'>"+data.dateTime+"</span></div><div class='com'><span class='comment'>"+data.comment+"</span></div><span class='grade'> 0</span></div>");
@@ -52,7 +52,7 @@ function uploadCommit( _uid, _username, _fration, _topic, _table){
 
 }
 
-function score(id,pos,fration,topic,table){
+function score(id,pos,fration,topic, table, status){
 	var x = pos.left+40;
 	var y = pos.top-5;
 	var i = 0;
@@ -67,24 +67,24 @@ function score(id,pos,fration,topic,table){
 	for(i=1;i<=5;i++){
 		$('.rightVote'+id).append("<div class='good_"+i+" scoreButton'>"+i+"</div>");
 	}
-		$('.suck_'+5).click(function() { addScore(-5, id, fration, topic, table);});
-		$('.suck_'+4).click(function() { addScore(-4, id, fration, topic, table);});
-		$('.suck_'+3).click(function() { addScore(-3, id, fration, topic, table);});
-		$('.suck_'+2).click(function() { addScore(-2, id, fration, topic, table);});
-		$('.suck_'+1).click(function() { addScore(-1, id, fration, topic, table);});
-		$('.good_'+1).click(function() { addScore(1, id, fration, topic, table);})
-		$('.good_'+2).click(function() { addScore(2, id, fration, topic, table);})
-		$('.good_'+3).click(function() { addScore(3, id, fration, topic, table);})
-		$('.good_'+4).click(function() { addScore(4, id, fration, topic, table);})
-		$('.good_'+5).click(function() { addScore(5, id, fration, topic, table);})
+		$('.suck_'+5).click(function() { addScore(-5, id, fration, topic, table,status);});
+		$('.suck_'+4).click(function() { addScore(-4, id, fration, topic, table,status);});
+		$('.suck_'+3).click(function() { addScore(-3, id, fration, topic, table,status);});
+		$('.suck_'+2).click(function() { addScore(-2, id, fration, topic, table,status);});
+		$('.suck_'+1).click(function() { addScore(-1, id, fration, topic, table,status);});
+		$('.good_'+1).click(function() { addScore(1, id, fration, topic, table,status);})
+		$('.good_'+2).click(function() { addScore(2, id, fration, topic, table,status);})
+		$('.good_'+3).click(function() { addScore(3, id, fration, topic, table,status);})
+		$('.good_'+4).click(function() { addScore(4, id, fration, topic, table,status);})
+		$('.good_'+5).click(function() { addScore(5, id, fration, topic, table,status);})
 
 }
 
-function addScore(_score, _id, _fration, _topic, _table){
+function addScore(_score, _id, _fration, _topic, _table,_status){
 	$.ajax({
 		url: "qa_cgi/addScore.php",
 		type: "POST",
-		data: { score : _score, id : _id, fration : _fration, topic : _topic, table : _table },
+		data: { score : _score, id : _id, fration : _fration, topic : _topic, table : _table, status : _status},
 		dataType: 'json',
 		success: function (data) {
 			
@@ -103,7 +103,7 @@ function addScore(_score, _id, _fration, _topic, _table){
 
 }
 
-function openSet(e, _topic, _fration, _table){
+function openSet(e, _topic, _fration, _table, _status){
 
 	function openAllComment(_id){
 	
@@ -113,16 +113,16 @@ function openSet(e, _topic, _fration, _table){
 		$.ajax({
 
 			url: 'qa_cgi/loadFullComment.php',
-			data: { id : _id ,topic : _topic, fration : _fration, table : _table },
+			data: { id : _id ,topic : _topic, fration : _fration, table : _table, status : _status },
 			type: "GET",
 			dataType: "json",
 			success: function(data){
 
 				$('#allAuthor').append(data.username);
 				$('#allContent').append(data.comment);
-				$('#replyButton').click(function(){uploadReply(_id, _fration, _topic, _table)});
+				$('#replyButton').click(function(){uploadReply(_id, _fration, _topic, _table, _status)});
 				loadAllReply(_fration, _topic, _table, _id);
-				$('#replyArea').keydown(function(e){inputKeyDown(e, _id, _fration, _topic, _table);});
+				$('#replyArea').keydown(function(e){inputKeyDown(e, _id, _fration, _topic, _table, _status);});
 				
 			},
 			error: function(xhr){
@@ -144,7 +144,7 @@ function showProfile()
 	
 }
 
-function uploadReply(_qid, _fration, _topic, _table){
+function uploadReply(_qid, _fration, _topic, _table, _status){
 
 
 	var _reply = $('#replyArea').val();
@@ -154,7 +154,7 @@ function uploadReply(_qid, _fration, _topic, _table){
 			url: "qa_cgi/addReplyToComment.php",
 			type: 'post',
 			dataType: 'json',
-			data: { qid : _qid, reply : _reply, fration : _fration, topic : _topic, table : _table },
+			data: { qid : _qid, reply : _reply, fration : _fration, topic : _topic, table : _table, status : _status },
 			success: function(data){
 				$('#replyArea').val("");
 				$('#allReply').append("\
@@ -176,14 +176,14 @@ function uploadReply(_qid, _fration, _topic, _table){
 
 }
 
-function loadAllReply(_fration, _topic, _table, _qid) {
+function loadAllReply(_fration, _topic, _table, _qid, _status) {
 
 	$.ajax({
 
 		url: "qa_cgi/loadAllReply.php",
 		type: 'get',
 		dataType: 'html',
-		data: { topic : _topic, table : _table, fration : _fration, qid : _qid },
+		data: { topic : _topic, table : _table, fration : _fration, qid : _qid, status : _status },
 		success: function(data) {
 
 			$('#allReply').html(data);
@@ -198,10 +198,10 @@ function loadAllReply(_fration, _topic, _table, _qid) {
 
 }
 
-function inputKeyDown(e, _qid, _fration, _topic, _table){
+function inputKeyDown(e, _qid, _fration, _topic, _table, _status){
 
 	if(e.which == 13 && !(e.shiftKey) ){ // if press Enter
-		uploadReply(_qid, _fration, _topic, _table);
+		uploadReply(_qid, _fration, _topic, _table, _status);
 	}
 
 }

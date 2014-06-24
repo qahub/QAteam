@@ -9,7 +9,8 @@
 	$topic = $_POST['topic'];
 	$fration = $_POST['fration'];
 	$table = $_POST['table'];
-	$tableName = "5_".$fration.$topic.$table."_".$qid;
+	$status = $_POST['status'];
+	$tableName = "5_".$fration.$topic.$status.$table."_".$qid;
 	$reply = $_POST['reply'];
 	$date = date('Ymd');
 	$time  = date('H:i:s', time());

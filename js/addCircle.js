@@ -13,8 +13,8 @@
 				dataType: "json",
 				success: function(data){
 
-					$('#allTitle').append(data.title);
-					$('#allContent').append(data.content);
+					$('#contentA').append(data.content);
+					$('#contentQ').append(data.contentQ);
 
 				},
 				error: function(xhr){

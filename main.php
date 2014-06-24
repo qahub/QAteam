@@ -49,19 +49,33 @@
           wheelSpeed: 20,
           wheelPropagation: false
         });
-		$('#allContent').perfectScrollbar({
+		$('#allAns').perfectScrollbar({
           wheelSpeed: 20,
           wheelPropagation: false
         });
+		$('#allQue').perfectScrollbar({
+          wheelSpeed: 20,
+          wheelPropagation: false
+        });        
 	});
 
 	</script>
 
 </head>
 	  <div id="allmask"></div>
-	  <div id="all">
-		<div id="allTitle"></div>
-		<div id="allContent"></div>
+	  <div id="all">	
+		<div id="allAns">
+			<div id="A">A</div>
+			<div id="contentA"></div>
+		</div>
+		<div id="line"></div>
+		<div id="allQue">
+			<div id="Q">Q</div>
+			<div id="contentQ"></div>
+		</div>	
+		<div id="toBoard">
+			<img id="toBoardButton" src="images/mainpage/toBoard.png" />
+		</div>
 	  </div>
 
 	 <div id="board">

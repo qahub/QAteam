@@ -9,6 +9,7 @@
 	$dataRow = mysql_fetch_assoc($dataQuery) or die(mysql_error());
 	$jsonData['title'] = $dataRow['title'];
 	$jsonData['content'] = $dataRow['content'];
+	$jsonData['contentQ'] = $dataRow['contentQ'];
 	$json = json_encode($jsonData);
 
 	echo $json
