@@ -60,6 +60,12 @@
 
         var headpic_address = "http://graph.facebook.com/" + uid + "/picture";
 		$('#bighead').attr('src', headpic_address);
+		$('#bighead').css("position", "relative");
+		$('#bighead').css("height", "70px");
+		$('#bighead').css("width", "70px");
+		$('#bighead').css("margin", "0 auto");
+		$('#bighead').css("border-radius", "50%");
+
 	});
 
 	</script>
