@@ -31,11 +31,11 @@ def create_new_round(nowFra, nowTable, cursor,db) :
 		nowTable = nowFra
 		nowFration = "Black"
 
-	qTableName = "5_"+nowFration+"NuclearQ"+nowTable
-	aTableName = "5_"+nowFration+"NuclearA"+nowTable
+	qTableName = "5_"+nowFration+"NuclearQ"+str(nowTable)
+	aTableName = "5_"+nowFration+"NuclearA"+str(nowTable)
 
-	qsql = "CREATE TABLE `"+qTableName+"`(id int(4) auto_increment primary key, uid int(100), comment longtext, grade int(1) DEFAULT 0, date date, time time, username varchar(20), evaluate mediumtext)"
-	asql = "CREATE TABLE `"+aTableName+"`(id int(4) auto_increment primary key, uid int(100), comment longtext, grade int(1) DEFAULT 0, date date, time time, username varchar(20), evaluate mediumtext)"
+	qsql = "CREATE TABLE `"+qTableName+"`(id int(4) auto_increment primary key, uid varchar(100), comment longtext, grade int(1) DEFAULT 0, date date, time time, username varchar(20), evaluate mediumtext)"
+	asql = "CREATE TABLE `"+aTableName+"`(id int(4) auto_increment primary key, uid varchar(100), comment longtext, grade int(1) DEFAULT 0, date date, time time, username varchar(20), evaluate mediumtext)"
 
 	cursor.execute(qsql)
 	db.commit()
@@ -46,6 +46,7 @@ def create_new_round(nowFra, nowTable, cursor,db) :
 def output_and_change_fration(cursor,db) :
 
 	row = getState(cursor,db)
+	nowTable = 0;
 
 	if row['nowFration'] == 1 :
 		nowTable = row['whiteNum']
@@ -68,27 +69,30 @@ def output_and_change_fration(cursor,db) :
 	result = cursor.fetchone()
 	contentQ = result['comment']
 
-	cursor.execute("INSERT INTO `5_qaDataNuclear`(`contentA`, ,`contentQ`,`fration`,`table`) VALUES('"+str(contentA)+"','"+str(contentQ)+"', '"+nowFraNum+"','"+nowTable+"')")
+	cursor.execute("INSERT INTO `5_qaDataNuclear`(`content`, `contentQ`,`fration`,`table`) VALUES('"+str(contentA)+"','"+str(contentQ)+"', '"+nowFraNum+"','"+nowTable+"')")
 	db.commit()
 	
-	nowTalbe += 1
-
-	if nowFraNum == 2 :
+	nowTable = int(nowTable) + 1
+	nowTable = str(nowTable)
+	print nowTable
+	if 	int(nowFraNum) == 2 :
 		cursor.execute("UPDATE `5_NuclearState` SET `value` = '"+nowTable+"' WHERE `name` = 'blackNum'")
 		db.commit()
 		cursor.execute("SELECT * FROM `5_NuclearState` WHERE `name` = 'whiteNum'")
 		result = cursor.fetchone()
-		nowTable = result['valeu']
+		nowTable = result['value']
 		nowFraNum = 1
+		print 'next white'
 	else :
 		cursor.execute("UPDATE `5_NuclearState` SET `value` = '"+nowTable+"' WHERE `name` = 'whiteNum'")
 		db.commit()
 		cursor.execute("SELECT * FROM `5_NuclearState` WHERE `name` = 'blackNum'")
 		result = cursor.fetchone()
-		nowTable = result['valeu']
+		nowTable = result['value']
 		nowFraNum = 2
+		print 'next black'
 
-	cursor.execute("UPDATE `5_NuclearState` SET `value` = '"+nowFraNum+"' WHERE `name` = 'nowFration'")
+	cursor.execute("UPDATE `5_NuclearState` SET `value` = '"+str(nowFraNum)+"' WHERE `name` = 'nowFration'")
 	db.commit()
 	
 	create_new_round(nowFraNum, nowTable, cursor, db)
@@ -123,5 +127,6 @@ while True:
 	time.sleep(5)
 	change_mode(cursor, db)
 	print "chagne mode!"
-#	time.sleep(aTime)
+	time.sleep(5)
 	output_and_change_fration(cursor, db)
+	print "output ! "

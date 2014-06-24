@@ -42,7 +42,7 @@ $(document).ready( function () {
 
 	$('#white').click(function() {
 
-		normalLink("forums.php?fration='1'&status='A'");
+		normalLink("forums.php?fration=1&status='A'");
 
 	});
 

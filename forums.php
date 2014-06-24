@@ -22,7 +22,6 @@
 		$table = $valid;
 
 	}
-	echo $table;
 
 ?>
 
@@ -127,7 +126,7 @@
 			<script src="https://qaweb.hackpad.com/oUnAhk2LkjD.js"></script><noscript><div>View <a href="https://qaweb.hackpad.com/oUnAhk2LkjD">WHITE</a> on Hackpad.</div></noscript>
 			<?php } ?>
 	</div>
-<?php if($_SESSION['fration'] == $_GET['fration'] || $valid == 0) {?>
+<?php if($_SESSION['fration'] == $_GET['fration'] && $valid == 0) {?>
 <div id="down">
 	<div id="arrow-new"></div>
 	<div id="arrow-text" class="arrow_button"> <p id="new">+new</p> </div>
