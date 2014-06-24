@@ -63,7 +63,7 @@ $(document).ready( function () {
 
 	$('#login').click(function() {
 
-		link('signup.html');
+		normalLink('signup.html');
 
 	});
 
