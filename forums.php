@@ -14,7 +14,6 @@
 		$srow[$name] = $value;
 
 	}
-
 	if($valid == 0 && $fration == 2) $table = $srow['blackNum'];
 	else if( $valid == 0 && $fration == 1) $table = $srow['whiteNum'];
 	else{
@@ -49,7 +48,7 @@
 	else if(fration == 1) var fra = 'White';
 	var topic = 'Nuclear';
 	var table =  <?echo $table; ?>;
-	var sta = <?echo $_GET['status']; ?>;
+	var sta = "<?echo $srow['nowStatus']; ?>";
 	var openAllComment = openSet(event, topic, fra, table, sta);
 	function newClick(){
 			$("#down").animate({

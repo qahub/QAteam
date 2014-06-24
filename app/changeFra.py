@@ -48,7 +48,7 @@ def output_and_change_fration(cursor,db) :
 	row = getState(cursor,db)
 	nowTable = 0;
 
-	if row['nowFration'] == 1 :
+	if int(row['nowFration']) == 1 :
 		nowTable = row['whiteNum']
 		nowFration = "White"
 	else :
@@ -61,12 +61,18 @@ def output_and_change_fration(cursor,db) :
 	tableName = "5_" + nowFration + "Nuclear" + nowStatus + nowTable;
 	cursor.execute("SELECT * FROM `"+tableName+"` ORDER BY `grade` DESC")
 	result = cursor.fetchone()
+	if result == None :
+		print "No commentA can output"
+		exit()
 	contentA = result['comment']
 	
 	nowStatus = "Q"
 	tableName = "5_" + nowFration + "Nuclear" + nowStatus + nowTable;
 	cursor.execute("SELECT * FROM `"+tableName+"` ORDER BY `grade` DESC")
 	result = cursor.fetchone()
+	if result == None :
+		print "No commentQ can output"
+		exit()
 	contentQ = result['comment']
 
 	cursor.execute("INSERT INTO `5_qaDataNuclear`(`content`, `contentQ`,`fration`,`table`) VALUES('"+str(contentA)+"','"+str(contentQ)+"', '"+nowFraNum+"','"+nowTable+"')")
@@ -130,3 +136,5 @@ while True:
 	time.sleep(5)
 	output_and_change_fration(cursor, db)
 	print "output ! "
+	change_mode(cursor, db)
+	print "change mode"

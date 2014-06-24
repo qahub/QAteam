@@ -3,6 +3,13 @@
 	require "qa_cgi/connect.php";
 	session_start();
 	$topic = "Nuclear";
+	$squery = mysql_query("SELECT * FROM `5_NuclearState`") or die(mysql_error());
+	$srow = array();
+	while( ($result = mysql_fetch_assoc($squery)) != false){
+		$name = $result['name'];
+		$value = $result['value'];
+		$srow[$name] = $value;
+	}
 
 ?>
 
@@ -35,6 +42,23 @@
 ?>
 
 	$(document).ready(function() {
+
+		$('#blackTriangle').jCanvas({
+			fillStyle: '<?php  if($srow['nowFration'] == 2) echo "black";else echo "#F1F2F2";?>',
+			 x: 50, y: 45,
+			 radius: 55,
+			 sides: 3,
+			 rotate: 180
+		}).drawPolygon();
+
+		$('#grayTriangle').jCanvas({
+			fillStyle: '<?php  if($srow['nowFration'] == 2) echo "#F1F2F2"; else echo "#black";?>',
+			 x: 50, y: 70,
+			 radius: 55,
+			 sides: 3,
+			 rotate: 0
+		}).drawPolygon();
+
 		var uid= "<?php echo $_SESSION['uid'];?>";
 		var username= "<?php echo $_SESSION['username'];?>";
 		var topic="<?php echo $topic;?>";

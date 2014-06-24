@@ -121,22 +121,6 @@
 $(document).ready(function (){
 
 
-	$('#blackTriangle').jCanvas({
-		 fillStyle: 'black',
-		 x: 50, y: 45,
-		 radius: 55,
-		 sides: 3,
-		 rotate: 180
-	}).drawPolygon();
-	
-	$('#grayTriangle').jCanvas({
-		 fillStyle: '#F1F2F2',
-		 x: 50, y: 70,
-		 radius: 55,
-		 sides: 3,
-		 rotate: 0
-	}).drawPolygon();
-	
 	$('#allmask').click(function(){
 	
 		$('#allmask').css("visibility","hidden");
