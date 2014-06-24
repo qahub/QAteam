@@ -136,10 +136,11 @@ function openSet(e, _topic, _fration, _table, _status){
 
 }
 
-function showProfile()
+function showProfile(_uid)
 {
 	$('#profile').css("visibility","visible");
 	$('#allmask').css("visibility","visible");
+	alert(_uid);
 	
 }
 
