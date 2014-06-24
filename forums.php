@@ -28,8 +28,8 @@
 	else if(fration == 1) var fra = 'White';
 	var topic = 'Nuclear';
 	var table = 1;
-	var status = "A";
-	var openAllComment = openSet(event, topic, fra, table, status);
+	var sta = "A";
+	var openAllComment = openSet(event, topic, fra, table, sta);
 	function newClick(){
 			$("#down").animate({
 				height:'100%',
@@ -40,7 +40,7 @@
 			$("#down").append("<textarea id='reply'></textarea>");
 			$("#down").append("<div id='arr'><div id='arrow-submit'></div><div id='arrow-subtext' class='arrow_button'> <p id='submit'>submit</p> </div></div>");
 			$("#down").append("<div id='arr2'> <div id='arrow-cancel'></div> <div id='arrow-cantext' class='arrow_button'> <p id='cancel'>cancel</p> </div> </div>");
-			$("#arrow-subtext").click(function(){uploadCommit(uid,username,fration,topic,table,status); });	
+			$("#arrow-subtext").click(function(){uploadCommit(uid,username,fration,topic,table,sta); });	
 			$("#arrow-cantext").click(function(){
 				$("#down").animate({
 					height:'70px',
@@ -55,7 +55,7 @@
 
 	$(document).ready(function() {
 
-		loadAllComment(fration, topic, table);
+		loadAllComment(fration, topic, table, sta);
 
 		$('#input_comment_area').keydown(function(event){inputKeyDown(event, uid, username, fration, topic, table)});
 		$("#arrow-text").click(newClick);

@@ -12,7 +12,7 @@
 	var topic = '<?php echo $topic; ?>';
 	var table = '<?php echo $table; ?>';
 	var fration = '<?php echo $fration; ?>';	
-
+	var sta = '<?php echo $status; ?>';
 </script>
 
 <?php
@@ -37,7 +37,7 @@
 				</div>
 				<div class='rightcom'>
 				<?php if($_SESSION['fration']==$_GET['fration']){ ?>
-				<span class='vote' onclick="score(<?php echo $crow['id']; ?>, $(this).offset(),fration,topic,table);">vote</span>	
+				<span class='vote' onclick="score(<?php echo $crow['id']; ?>, $(this).offset(),fration,topic,table,sta);">vote</span>	
 				<?php }else{ ?>
 				<span class='vote'>vote</span>
 				<?php }?>

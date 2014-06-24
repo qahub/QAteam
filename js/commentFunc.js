@@ -1,6 +1,5 @@
 function loadAllComment(_fration, _topic, _table, _status) {
 
-
 	$.ajax({
 
 		url: "qa_cgi/loadAllComment.php",
@@ -52,7 +51,7 @@ function uploadCommit( _uid, _username, _fration, _topic, _table, _status){
 
 }
 
-function score(id,pos,fration,topic, table, status){
+function score(id,pos,fration,topic, table, sta){
 	var x = pos.left+40;
 	var y = pos.top-5;
 	var i = 0;
@@ -67,16 +66,16 @@ function score(id,pos,fration,topic, table, status){
 	for(i=1;i<=5;i++){
 		$('.rightVote'+id).append("<div class='good_"+i+" scoreButton'>"+i+"</div>");
 	}
-		$('.suck_'+5).click(function() { addScore(-5, id, fration, topic, table,status);});
-		$('.suck_'+4).click(function() { addScore(-4, id, fration, topic, table,status);});
-		$('.suck_'+3).click(function() { addScore(-3, id, fration, topic, table,status);});
-		$('.suck_'+2).click(function() { addScore(-2, id, fration, topic, table,status);});
-		$('.suck_'+1).click(function() { addScore(-1, id, fration, topic, table,status);});
-		$('.good_'+1).click(function() { addScore(1, id, fration, topic, table,status);})
-		$('.good_'+2).click(function() { addScore(2, id, fration, topic, table,status);})
-		$('.good_'+3).click(function() { addScore(3, id, fration, topic, table,status);})
-		$('.good_'+4).click(function() { addScore(4, id, fration, topic, table,status);})
-		$('.good_'+5).click(function() { addScore(5, id, fration, topic, table,status);})
+		$('.suck_'+5).click(function() { addScore(-5, id, fration, topic, table,sta);});
+		$('.suck_'+4).click(function() { addScore(-4, id, fration, topic, table,sta);});
+		$('.suck_'+3).click(function() { addScore(-3, id, fration, topic, table,sta);});
+		$('.suck_'+2).click(function() { addScore(-2, id, fration, topic, table,sta);});
+		$('.suck_'+1).click(function() { addScore(-1, id, fration, topic, table,sta);});
+		$('.good_'+1).click(function() { addScore(1, id, fration, topic, table,sta);})
+		$('.good_'+2).click(function() { addScore(2, id, fration, topic, table,sta);})
+		$('.good_'+3).click(function() { addScore(3, id, fration, topic, table,sta);})
+		$('.good_'+4).click(function() { addScore(4, id, fration, topic, table,sta);})
+		$('.good_'+5).click(function() { addScore(5, id, fration, topic, table,sta);})
 
 }
 
@@ -121,7 +120,7 @@ function openSet(e, _topic, _fration, _table, _status){
 				$('#allAuthor').append(data.username);
 				$('#allContent').append(data.comment);
 				$('#replyButton').click(function(){uploadReply(_id, _fration, _topic, _table, _status)});
-				loadAllReply(_fration, _topic, _table, _id);
+				loadAllReply(_fration, _topic, _table, _id, _status);
 				$('#replyArea').keydown(function(e){inputKeyDown(e, _id, _fration, _topic, _table, _status);});
 				
 			},

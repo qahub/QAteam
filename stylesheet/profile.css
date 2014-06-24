@@ -1,5 +1,5 @@
 * {
-	font-family: "centry goth", "微軟正黑體";
+	font-family: "century gothic", "微軟正黑體";
 }
 
 #headerBar {
@@ -185,7 +185,7 @@
 
 ._content {
 	position: relative;
-	width: 125px;
+	width: 175px;
 	top: 50px;
 	left: 35px;
 	z-index:3;	
