@@ -50,7 +50,7 @@ span.dateTime
 span
 {
 	font: "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
-	color: #FFF;
+	color: #000;
 }
 
 span.comment
@@ -91,7 +91,7 @@ span.name:hover
 
 span.grade
 {
-	color: #000;
+	color: #FFF;
 	position: relative;
 	top: 5px;
 	width: 60px;
@@ -102,7 +102,7 @@ span.vote
 	position: relative;
 	top: 8px;
 	margin: 0 auto;
-	color: #000;
+	color: #FFF;
 	font-size: 20px;
 }
 
@@ -122,6 +122,7 @@ span.minus
 {
 	position: relative;
 	top: 0px;
+	color: #FFF;
 }
 
 span.grade
@@ -148,7 +149,7 @@ div.rightcom
 	text-align: center;
 	border-top-right-radius: 9px; 
 	border-bottom-right-radius: 9px; 
-	background-color: #CDCDCD; 
+	background-color: #666666; 
 	height: 123px;
 	width: 100px;
 	position: relative;
@@ -161,14 +162,14 @@ div.leftcom
 {
 	border-top-left-radius: 9px; 
 	border-bottom-left-radius: 9px; 
-	background-color: #4D4D4D;
+	background-color: #F2F2F2;
 	width: 400px;
 	height: 123px;
 	overflow: hidden;
 	position: relative;
 	margin-top: 0px;
 	float: left;
-	color: #FFFFFF;
+	color: #000;
 }
 
 div.leftvote
@@ -199,7 +200,7 @@ div.rightvote
 	border-bottom-width: 25px;
 	border-right-width: 0px;
 	border-left-width: 80px; 
-	border-color:transparent transparent transparent #4D4D4D;
+	border-color:transparent transparent transparent #B3B3B3;
 	border-style:dashed dashed dashed solid; 
 }
 
@@ -216,7 +217,7 @@ div.rightvote
 	border-bottom-width: 25px;
 	border-right-width: 0px;
 	border-left-width: 100px; 
-	border-color:transparent transparent transparent #4D4D4D;
+	border-color:transparent transparent transparent #B3B3B3;
 	border-style:dashed dashed dashed solid; 
 }
 
@@ -233,7 +234,7 @@ div.rightvote
 	border-bottom-width: 25px;
 	border-right-width: 0px;
 	border-left-width: 100px; 
-	border-color:transparent transparent transparent #4D4D4D;
+	border-color:transparent transparent transparent #B3B3B3;
 	border-style:dashed dashed dashed solid; 
 }
 
@@ -252,7 +253,7 @@ div.rightvote
 
 p
 {
-	color: #FFF;
+	color: #000;
 	font-size: 20px;
 	font: "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
 }
@@ -448,4 +449,10 @@ div#give
 div#give p
 {
 	font-size: 50px;
+}
+
+img#logo
+{
+	height: 100px;
+	width: 100px;
 }

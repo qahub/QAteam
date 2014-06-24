@@ -26,7 +26,7 @@
 
 <html>
 <head>
-<link href="stylesheet/forums.css" rel="stylesheet" type="text/css"></link>
+<link href="stylesheet/forums_W.css" rel="stylesheet" type="text/css"></link>
 <link href="stylesheet/profile.css" rel="stylesheet" />
 <link href="stylesheet/score.css" rel="stylesheet" />
 <link href="stylesheet/allComPanel.css" rel="stylesheet" />
@@ -112,6 +112,14 @@
 </head>
 
 <body>
+
+	<?php if($_GET['fration'] == 2) { ?>
+		<img id = 'logo' src="images/forumns/Q_black.png"> </img>
+	<?php }else if($_GET['fration'] == 1){ ?>
+		<img id = 'logo' src="images/forumns/Q_white.png"> </img>
+	<?php } ?>
+
+
 	<div id ='forums'>
 		<div id='allComment'>
 		</div>
