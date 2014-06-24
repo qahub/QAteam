@@ -88,6 +88,7 @@
 			$('#allContent').html("");
 
 			$('#profile').css("visibility","hidden")
+			$('#bighead').attr('src', 'images/profile/default.jpg');
 		
 			$('#allReply').html("");
 			$('#replyPart').html("");
