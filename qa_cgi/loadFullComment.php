@@ -15,7 +15,8 @@
 	$topic = $_GET['topic'];
 	$fration = $_GET['fration'];
 	$table = $_GET['table'];
-	$tableName = "5_".$fration.$topic.$table; 
+	$status = $_GET['status'];
+	$tableName = "5_".$fration.$topic.$status.$table; 
 	$dataQuery = mysql_query("SELECT * FROM `$tableName` WHERE `id` = '$id'") or die(mysql_error());
 	$dataRow = mysql_fetch_assoc($dataQuery) or die(mysql_error());
 	$json = json_encode($dataRow);

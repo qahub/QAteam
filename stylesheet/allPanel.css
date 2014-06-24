@@ -4,9 +4,9 @@
 	z-index: 5;
 	width: 100%;
 	height: 100%;
-	opacity: 0.5	;
-	visibility: hidden;
+	opacity: 0.5;
 	top: 0px;
+	visibility: hidden;
 }
 
 #all {
@@ -17,28 +17,111 @@
 	left: 25%;
 	width: 50%;
 	height: 70%;
-	background-color: #F2F1F1;
+	background-color: #000000;
 	border-radius: 20px;
-	padding: 5px;
-	visibility: hidden;
+	color: #F2F1F1;
+	visibility: hidden;	
 }
 
-#allTitle {
 
-	position: relative;
-	font-size: 48pt;
-	margin: 20px;
+#allAns {
 
-}
-
-#allContent {
-
-	position: relative;
-	top: 40px;
-	left: 60px;
-	font-size: 12pt;
-	margin: 0px 10px 10px 20px;
-	width: 80%;
-	height: 80%;
+	position: absolute;
+	border-right: 1px solid #F2F1F1;
+	width: 93%;
+	height: 38%;
+	left: 3%;
+	top: 4%;
 	overflow: hidden;
+}
+
+#line {
+
+	position: absolute;
+	border-bottom: 2px solid #F2F1F1;
+	width: 92%;
+	height: 2%;
+	left: 3%;
+	top: 44%;
+}
+
+#allQue {
+
+	position: absolute;
+	border-right: 1px solid #F2F1F1;
+	width: 93%;
+	height: 38%;
+	left: 3%;
+	top: 49%;
+	overflow: hidden;
+
+}
+
+#A {
+
+	position: absolute;
+	font-size: 36pt;
+	left: 8%;
+}
+#contentA {
+
+	position: absolute;
+	width: 100%;
+	left: 3%;
+	top:  30%;
+
+}
+
+
+#Q {
+
+	position: absolute;
+	font-size: 36pt;
+	left: 8%;
+}
+
+#contentQ {
+
+	position: absolute;
+	width: 100%;
+	left: 3%;
+	top:  30%;
+
+}
+
+#toBoard{
+
+	position: absolute;
+	border: 1px solid #000;
+	width: 93%;
+	height: 14%;
+	left: 3%;
+	top: 86%;
+	overflow: hidden;
+
+
+}
+
+#toBoardButton {
+
+	position: relative;
+	width: 8%;
+	height: 90%;
+
+}
+
+#toBoardButton:hover {
+
+	cursor: pointer;
+	top: 3px;
+	left: 3px;
+
+}
+
+#toBoardButton:active {
+
+
+	top: 0%;
+	left: 0%;
+
 }

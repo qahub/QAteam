@@ -5,6 +5,7 @@
 	$table = $_GET['table'];
 	if($_GET['fration'] == 2) $fration = 'Black';
 	else $fration = 'White';
+	$status = $_GET['status'];
 ?>
 
 <script>
@@ -15,7 +16,7 @@
 </script>
 
 <?php
-	$cquery = mysql_query("SELECT * FROM `5_".$fration.$topic.$table."` ORDER BY `grade` DESC") or die(mysql_error()); 
+	$cquery = mysql_query("SELECT * FROM `5_".$fration.$topic.$status.$table."` ORDER BY `grade` DESC") or die(mysql_error()); 
 	while(($crow = mysql_fetch_assoc($cquery)) != FALSE ) {
 		if(strlen($crow['comment']) > 60) {
 			$comment = mb_substr($crow['comment'],0,60,'utf8')."...";

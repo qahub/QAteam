@@ -4,8 +4,9 @@
 	$topic = $_GET['topic'];
 	$table = $_GET['table'];
 	$fration = $_GET['fration'];
+	$status = $_GET['status'];
 	$qid = $_GET['qid'];
-	$tableName = "5_".$fration.$topic.$table."_".$qid;
+	$tableName = "5_".$fration.$topic.$status.$table."_".$qid;
 ?>
 
 <?php
