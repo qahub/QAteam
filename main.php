@@ -57,6 +57,15 @@
           wheelSpeed: 20,
           wheelPropagation: false
         });        
+
+        var headpic_address = "http://graph.facebook.com/" + uid + "/picture";
+		$('#bighead').attr('src', headpic_address);
+		$('#bighead').css("position", "relative");
+		$('#bighead').css("height", "70px");
+		$('#bighead').css("width", "70px");
+		$('#bighead').css("margin", "0 auto");
+		$('#bighead').css("border-radius", "50%");
+
 	});
 
 	</script>
@@ -91,9 +100,9 @@
 	 <div id="headpic">
 		<?php if(!(empty($_SESSION['uid']))) { ?>
 			<?php echo $_SESSION['username'];?>
-			<img src='images/test.jpg'></img>
+			<img id = 'bighead' src='http://graph.facebook.com/UID/picture'></img>
 		<?php } ?>
-		
+
 	 </div>
 	 <div id="custom">
 		<div id="customTop"></div>

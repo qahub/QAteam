@@ -76,7 +76,7 @@ div#headpic
 	text-align: center;
 }
 
-div#headpic img
+div#headpic img#bighead
 {
 	position: relative;
 
