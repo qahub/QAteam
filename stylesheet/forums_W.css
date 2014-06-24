@@ -450,3 +450,9 @@ div#give p
 {
 	font-size: 50px;
 }
+
+img#logo
+{
+	height: 100px;
+	width: 100px;
+}

@@ -113,6 +113,14 @@
 </head>
 
 <body>
+
+	<?php if($_GET['fration'] == 2) { ?>
+		<img id = 'logo' src="images/forumns/Q_black.png"> </img>
+	<?php }else if($_GET['fration'] == 1){ ?>
+		<img id = 'logo' src="images/forumns/Q_white.png"> </img>
+	<?php } ?>
+
+
 	<div id ='forums'>
 		<div id='allComment'>
 		</div>
