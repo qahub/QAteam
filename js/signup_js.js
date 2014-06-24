@@ -15,7 +15,7 @@
 			</div>
 		");
 */
-	$('#page').append("<div id='mask'></div>");
+
 	$('#page').append("<div id='register'><div id='explain'>選擇你想要加入討論的陣營</div><div id='item'><ol class='frationItem'><input type='radio' name='fraRadio' id='fraRadio' value='2'>正方</ol><ol class='frationItem'><input type='radio' name='fraRadio' id='fraRadio' value='0' checked>中立方</ol><ol class='frationItem'><input type='radio' id='fraRradio' name='fraRadio' value='1'>反方</ol></div><div id='button'><div id='regButton' class='button'>送出</div><div id='cancelButton' class='button' onclick='cancel()'>取消</div></div></div>");
 	$('#mask').click(cancel);
 	$('#regButton').click(function(){firstLogin(id,username);});
@@ -35,8 +35,9 @@ function checkUser(){
 		type: 'POST',
 		dataType: 'json',
 		success: function(data){
+			$('#loader').remove();
 			if(data.result){
-			 	document.location.href="index.php";
+				 document.location.href="index.php";
 			}else{ 
 				getSomeInformation(data.uid, data.username);
 				
@@ -48,8 +49,9 @@ function checkUser(){
 			console.log(ajaxOptions);
 			console.log(thrownError);
 		},
-		complete: function() {
-
+		beforeSend: function() {
+			$('#page').append("<div id='mask'></div>");
+			$('#loader').css("visibility", "visible");
 		}
 
 	});

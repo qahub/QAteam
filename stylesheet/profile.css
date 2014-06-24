@@ -27,7 +27,7 @@
 #freetalk
 {
    height:70%;
-   overflow: scroll;
+   overflow: hidden;
 }
 #titleft
 {
@@ -88,7 +88,7 @@
 	 width: 78%;
 	 height:99%;
 	 z-index: 0;
-	 overflow: auto;
+	 overflow: hidden;
 }
 
 #right {
@@ -246,7 +246,6 @@ nav:hover{
 	position: relative;
 	top: 13%;
 	left: 10%;
-
 
 }
 

@@ -103,7 +103,7 @@ function addScore(_score, _id, _fration, _topic, _table){
 
 }
 
-function openSet(_topic, _fration, _table){
+function openSet(e, _topic, _fration, _table){
 
 	function openAllComment(_id){
 	
@@ -118,7 +118,11 @@ function openSet(_topic, _fration, _table){
 			dataType: "json",
 			success: function(data){
 
+				$('#allAuthor').append(data.username);
 				$('#allContent').append(data.comment);
+				$('#replyButton').click(function(){uploadReply(_id, _fration, _topic, _table)});
+				loadAllReply(_fration, _topic, _table, _id);
+				$('#replyArea').keydown(function(e){inputKeyDown(e, _id, _fration, _topic, _table);});
 				
 			},
 			error: function(xhr){
@@ -138,5 +142,66 @@ function showProfile()
 	$('#profile').css("visibility","visible");
 	$('#allmask').css("visibility","visible");
 	
+}
+
+function uploadReply(_qid, _fration, _topic, _table){
+
+
+	var _reply = $('#replyArea').val();
+	if( _reply == "") return;
+		$.ajax({
+
+			url: "qa_cgi/addReplyToComment.php",
+			type: 'post',
+			dataType: 'json',
+			data: { qid : _qid, reply : _reply, fration : _fration, topic : _topic, table : _table },
+			success: function(data){
+				$('#replyArea').val("");
+				$('#allReply').append("\
+						<div class='eachReply'> \
+							<div class='replyName'>"+data.username+"</div>\
+							<div class='replyContent'>"+data.reply+"</div>\
+							<div class='replyLine'></div>\
+						</div>\
+					");
+
+			},
+			error: function(xhr,ajaxOptions, thrownError){
+//					alert(xhr.status);		
+//					alert(xhr.responseText);
+//					alert(thrownError);
+			}
+
+		});
+
+}
+
+function loadAllReply(_fration, _topic, _table, _qid) {
+
+	$.ajax({
+
+		url: "qa_cgi/loadAllReply.php",
+		type: 'get',
+		dataType: 'html',
+		data: { topic : _topic, table : _table, fration : _fration, qid : _qid },
+		success: function(data) {
+
+			$('#allReply').html(data);
+
+		},
+		error: function(xhr) {
+//			alert(xhr.status);
+		},
+
+	});
+
+
+}
+
+function inputKeyDown(e, _qid, _fration, _topic, _table){
+
+	if(e.which == 13 && !(e.shiftKey) ){ // if press Enter
+		uploadReply(_qid, _fration, _topic, _table);
+	}
 
 }

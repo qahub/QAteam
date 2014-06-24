@@ -9,12 +9,16 @@
 <link href="stylesheet/forums.css" rel="stylesheet" type="text/css"></link>
 <link href="stylesheet/profile.css" rel="stylesheet" />
 <link href="stylesheet/score.css" rel="stylesheet" />
-<link href="stylesheet/allPanel.css" rel="stylesheet" />
+<link href="stylesheet/allComPanel.css" rel="stylesheet" />
+ <link href="plugin/prefectScrollBar/perfect-scrollbar.css" rel="stylesheet">
 <script src="http://code.jquery.com/jquery-2.1.0.min.js" type="text/javascript"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.js" type="text/javascript"></script>
+<script src="plugin/prefectScrollBar/jquery.mousewheel.js"></script>
+<script src="plugin/prefectScrollBar/perfect-scrollbar.js"></script>
 <script src="js/commentFunc.js"></script>
-<script src="js/signup_js.js"></script>
 <script src="js/link.js"></script>
+<script src="js/signup_js.js"></script>
+
 <script>
 
 	var uid = "<?php echo $_SESSION['uid'];?>";
@@ -24,7 +28,7 @@
 	else if(fration == 1) var fra = 'White';
 	var topic = 'Nuclear';
 	var table = 1;
-	var openAllComment = openSet(topic, fra, 1);
+	var openAllComment = openSet(event, topic, fra, table);
 	function newClick(){
 			$("#down").animate({
 				height:'100%',
@@ -33,7 +37,7 @@
 			//$("#arrow-new").remove();
 			$("#down").empty();
 			$("#down").append("<textarea id='reply'></textarea>");
-			$("#down").append("<div id='arr'> <div id='arrow-submit'></div> <div id='arrow-subtext' class='arrow_button'> <p id='submit'>submit</p> </div> </div>");
+			$("#down").append("<div id='arr'><div id='arrow-submit'></div>					<div id='arrow-subtext' class='arrow_button'> <p id='submit'>submit</p> </div></div>");
 			$("#down").append("<div id='arr2'> <div id='arrow-cancel'></div> <div id='arrow-cantext' class='arrow_button'> <p id='cancel'>cancel</p> </div> </div>");
 			$("#arrow-subtext").click(function(){uploadCommit(uid,username,fration,topic,table); });	
 			$("#arrow-cantext").click(function(){
@@ -50,7 +54,7 @@
 
 	$(document).ready(function() {
 
-		loadAllComment(fration, topic, 1);
+		loadAllComment(fration, topic, table);
 
 		$('#input_comment_area').keydown(function(event){inputKeyDown(event, uid, username, fration, topic, table)});
 		$("#arrow-text").click(newClick);
@@ -58,11 +62,26 @@
 		
 			$('#allmask').css("visibility","hidden");
 			$('#all').css("visibility","hidden");
-			$('#allTitle').html("");
+			$('#allAuthor').html("");
 			$('#allContent').html("");
+
 			$('#profile').css("visibility","hidden")
 		
+			$('#allReply').html("");
+			$('#replyPart').html("");
+			$('#replyPart').append("<img id='replyButton' src='images/forumns/reply.png' /><textarea id='replyArea' placeholder='給點意見吧 !'></textarea>");
 		});
+
+
+		$('#allContent').perfectScrollbar({
+          wheelSpeed: 20,
+          wheelPropagation: false
+        });
+        
+		$('#allReply').perfectScrollbar({
+          wheelSpeed: 20,
+          wheelPropagation: false
+        });
 
 
 	});
@@ -117,7 +136,21 @@
   </nav>
   <div id="allmask"></div>
   <div id="all">
-	<div id="allContent"></div>
+  	<span id="allLeft">
+  		<div id="allAuthor"></div>
+		<div id="allContent"></div>
+	</span>
+	<span id="line"></span>
+	<span id="allRight">
+		<div id="allReply"></div>
+	<?php  if(!empty($_SESSION['uid'])){ ?>
+		<div id="replyPart">
+			<img id="replyButton" src="images/forumns/reply.png" />
+			<textarea id="replyArea" placeholder="給點意見吧 !"></textarea>
+		</div>
+	<?php } ?>
+	</span>
+
   </div>
   <div id='profile'></div>
 </body>
