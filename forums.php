@@ -176,7 +176,7 @@
 
   </div>
   <div id='profile'>
-  	<img id = 'bighead' src='images/test.jpg'> </img>
+  	<img id = 'bighead' src='images/profile/default.jpg'> </img>
   	<div id = 'name'> <p> battle cat </p> </div>
   	<div id = 'post' class = 'list'> 
   		<img class = 'icon' src='images/profile/01.png'> </img>
