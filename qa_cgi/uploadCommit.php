@@ -1,13 +1,13 @@
 <?
 	include('connect.php');
-
-	$uid = $_POST['uid'];
-	$username = $_POST['username'];
+	session_start();
+	$uid = $_SESSION['uid'];
+	$username = $_SESSION['username'];
 	$comment = $_POST['comment'];
 	$fration = $_POST['fration'];
 	$topic = $_POST['topic'];
 	$table = $_POST['table'];
-	$status = $_POST['status']
+	$status = $_POST['status'];
 	$date = date('Ymd');
 	$time  = date('H:i:s', time());
 

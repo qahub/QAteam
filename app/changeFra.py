@@ -96,9 +96,9 @@ def output_and_change_fration(cursor,db) :
 def change_mode(cursor, db) :
 
 	row = getState(cursor, db)
-	if cmp(str(row['nowStatus']), "Q") :
+	if not(cmp(str(row['nowStatus']), "Q")) :
 		setState(cursor, db, "nowStatus", "A")
-	elif cmp(str(row['nowStatus']), "A") :
+	elif not(cmp(str(row['nowStatus']), "A")) :
 		setState(cursor, db, "nowStatus", "Q")
 
 
@@ -123,5 +123,5 @@ while True:
 	time.sleep(5)
 	change_mode(cursor, db)
 	print "chagne mode!"
-	time.sleep(aTime)
+#	time.sleep(aTime)
 	output_and_change_fration(cursor, db)

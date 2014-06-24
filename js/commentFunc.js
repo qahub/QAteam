@@ -36,9 +36,9 @@ function uploadCommit( _uid, _username, _fration, _topic, _table, _status){
 				$('#input_comment_area').val("");
 				// $('#allComment').append("<div class='comment'><div class='name_n_date'><span class='name'>"+data.name+" </span><span class='dateTime'>"+data.dateTime+"</span></div><div class='com'><span class='comment'>"+data.comment+"</span></div><span class='grade'> 0</span></div>");
 				if(_fration == 'White'){
-					document.location.href="forums.php?fration=1";
+					document.location.href="forums.php?fration=1&status='A'";
 				}else{
-					document.location.href="forums.php?fration=2";
+					document.location.href="forums.php?fration=2&status='A'";
 				}
 			},
 			error: function(xhr,ajaxOptions, thrownError){
