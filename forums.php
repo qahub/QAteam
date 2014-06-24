@@ -1,6 +1,27 @@
 <?php
+	
+	require "qa_cgi/connect.php";
 
 	session_start();
+	$valid = $_GET['valid'];
+	$fration = $_GET['fration'];
+	$squery = mysql_query("SELECT * FROM `5_NuclearState`") or die(mysql_error());
+	$srow = array();
+
+	while( ($result = mysql_fetch_assoc($squery)) != false){
+		$name = $result['name'];
+		$value = $result['value'];
+		$srow[$name] = $value;
+
+	}
+
+	if($valid == 0 && $fration == 2) $table = $srow['blackNum'];
+	else if( $valid == 0 && $fration == 1) $table = $srow['whiteNum'];
+	else{
+
+		$table = $valid;
+
+	}
 
 ?>
 
@@ -23,12 +44,12 @@
 
 	var uid = "<?php echo $_SESSION['uid'];?>";
 	var username = "<?php echo $_SESSION['username'];?>";
-	var fration = '<?php echo $_GET['fration']; ?>';
+	var fration = '<?php echo $fration; ?>';
 	if(fration == 2) var fra = 'Black';
 	else if(fration == 1) var fra = 'White';
 	var topic = 'Nuclear';
-	var table = 1;
-	var sta = "A";
+	var table =  <?echo $table; ?>;
+	var sta = <?echo $_GET['status']; ?>;
 	var openAllComment = openSet(event, topic, fra, table, sta);
 	function newClick(){
 			$("#down").animate({
@@ -54,7 +75,6 @@
 
 
 	$(document).ready(function() {
-
 		loadAllComment(fration, topic, table, sta);
 
 		$('#input_comment_area').keydown(function(event){inputKeyDown(event, uid, username, fration, topic, table)});
@@ -106,7 +126,7 @@
 			<script src="https://qaweb.hackpad.com/oUnAhk2LkjD.js"></script><noscript><div>View <a href="https://qaweb.hackpad.com/oUnAhk2LkjD">WHITE</a> on Hackpad.</div></noscript>
 			<?php } ?>
 	</div>
-<?php if($_SESSION['fration'] == $_GET['fration']) {?>
+<?php if($_SESSION['fration'] == $_GET['fration'] || $valid == 0) {?>
 <div id="down">
 	<div id="arrow-new"></div>
 	<div id="arrow-text" class="arrow_button"> <p id="new">+new</p> </div>
@@ -144,7 +164,7 @@
 	<span id="line"></span>
 	<span id="allRight">
 		<div id="allReply"></div>
-	<?php  if(!empty($_SESSION['uid'])){ ?>
+	<?php  if(!empty($_SESSION['uid']) || $valid == 0){ ?>
 		<div id="replyPart">
 			<img id="replyButton" src="images/forumns/reply.png" />
 			<textarea id="replyArea" placeholder="給點意見吧 !"></textarea>
