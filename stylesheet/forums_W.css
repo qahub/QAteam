@@ -122,6 +122,7 @@ span.minus
 {
 	position: relative;
 	top: 0px;
+	color: #FFF;
 }
 
 span.grade
@@ -168,7 +169,7 @@ div.leftcom
 	position: relative;
 	margin-top: 0px;
 	float: left;
-	color: #FFFFFF;
+	color: #000;
 }
 
 div.leftvote
