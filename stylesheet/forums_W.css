@@ -1,0 +1,451 @@
+
+* {
+	font-family: "centry goth", "微軟正黑體";
+}
+
+body
+{
+	overflow: auto;
+}
+
+div#forums
+{
+	width: 50%;
+}
+
+div#allComment
+{
+	margin-bottom: 100px; 
+	width: auto;
+}
+
+div.comment
+{
+	overflow: auto;
+	width: 500px;
+	margin: 0 auto;
+	margin-top: 25px;
+}
+
+div.com
+{
+	width: 90%;
+	margin-left: 20px;
+}
+
+div.name_n_date
+{
+	width: auto;
+	height: 40px;
+	margin-left: 5px;
+	margin-top: 10px;
+}
+
+span.dateTime
+{
+	position: absolute;
+	right: 15px;
+}
+
+span
+{
+	font: "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
+	color: #FFF;
+}
+
+span.comment
+{
+	width: 90%;
+	height: 60px;
+	position: absolute;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+span.name
+{
+	position: absolute;
+	left: 15px;
+	font-size: 25px;
+}
+
+span.name:hover
+{
+	cursor: pointer;
+}
+
+.more {
+
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+
+}
+
+.more:hover {
+
+	cursor: pointer;
+	text-decoration: underline;
+
+}
+
+span.grade
+{
+	color: #000;
+	position: relative;
+	top: 5px;
+	width: 60px;
+}
+
+span.vote
+{
+	position: relative;
+	top: 8px;
+	margin: 0 auto;
+	color: #000;
+	font-size: 20px;
+}
+
+span.vote:hover
+{
+	border: 3px outset;
+	cursor: pointer;
+
+}
+
+span.vote:active
+{
+	border: 3px inset;
+}
+
+span.minus
+{
+	position: relative;
+	top: 0px;
+}
+
+span.grade
+{
+	position: relative;
+	top: 15px;
+	left: -3px;
+	font-size: 25pt;
+	font-style: italic;
+}
+
+div#hackpad
+{
+	position: fixed;
+	left: 45%;
+	top: 20px;
+	width: 50%;
+	height: 50%;
+	float: right;
+}
+
+div.rightcom
+{
+	text-align: center;
+	border-top-right-radius: 9px; 
+	border-bottom-right-radius: 9px; 
+	background-color: #666666; 
+	height: 123px;
+	width: 100px;
+	position: relative;
+	margin-top: 0px;
+	float: right;
+	overflow: hidden;
+}
+
+div.leftcom
+{
+	border-top-left-radius: 9px; 
+	border-bottom-left-radius: 9px; 
+	background-color: #F2F2F2;
+	width: 400px;
+	height: 123px;
+	overflow: hidden;
+	position: relative;
+	margin-top: 0px;
+	float: left;
+	color: #FFFFFF;
+}
+
+div.leftvote
+{
+	margin-top: -28px;
+	height: 70px;
+	width: 50px;
+}
+
+div.rightvote
+{
+	margin-top: -28px;
+	height: 70px;
+	width: 50px;
+	float: right;
+}
+
+#arrow-new
+{ 
+	position: relative;
+	top: 10px;
+	left: 10%;
+
+	width:0px; 
+	height:0px; 
+	border-style:solid;
+	border-top-width: 25px;
+	border-bottom-width: 25px;
+	border-right-width: 0px;
+	border-left-width: 80px; 
+	border-color:transparent transparent transparent #B3B3B3;
+	border-style:dashed dashed dashed solid; 
+}
+
+#arrow-submit
+{ 
+	position: absolute;
+	top: 17%;
+	left: 0%;
+
+	width:0px; 
+	height:0px; 
+	border-style:solid;
+	border-top-width: 25px;
+	border-bottom-width: 25px;
+	border-right-width: 0px;
+	border-left-width: 100px; 
+	border-color:transparent transparent transparent #B3B3B3;
+	border-style:dashed dashed dashed solid; 
+}
+
+#arrow-cancel
+{ 
+	position: absolute;
+	top: 17%;
+	left: 0%;
+
+	width:0px; 
+	height:0px; 
+	border-style:solid;
+	border-top-width: 25px;
+	border-bottom-width: 25px;
+	border-right-width: 0px;
+	border-left-width: 100px; 
+	border-color:transparent transparent transparent #B3B3B3;
+	border-style:dashed dashed dashed solid; 
+}
+
+
+#down
+{
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+
+	height: 70px;
+	width: 100%;
+
+	background-color: #000;
+}
+
+p
+{
+	color: #FFF;
+	font-size: 20px;
+	font: "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
+}
+
+div.leftvote p
+{
+	height: 2px;
+	color: #000;
+	font-size: 15px;
+	font: "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
+}
+
+div.rightvote p
+{
+	height: 2px;
+	color: #000;
+	font-size: 15px;
+	font: "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
+}
+
+#arrow-text
+{
+	position: absolute;
+	top: 0px;
+	left: 10%;
+
+	width: 20px;
+	height: 20px;
+}
+
+#arrow-text:active p#new
+{
+	color: #4D4D4D;
+}
+
+.arrow_button:hover
+{
+	cursor: pointer;
+}
+
+#arrow-subtext
+{
+	position: absolute;
+	top: 0%;
+	left: 0%;
+
+	width: 20px;
+	height: 20px;
+}
+
+#arrow-subtext:active p#submit
+{
+	color: #4D4D4D;
+}
+
+#arrow-cantext
+{
+	position: absolute;
+	top: 0%;
+	left: 0%;
+
+	width: 20px;
+	height: 20px;
+}
+
+#arrow-cantext:active p#cancel
+{
+	color: #4D4D4D;
+}
+
+textarea
+{
+	resize: none;
+}
+
+textarea#reply
+{
+	position: relative;
+	margin-left: 10%;
+	margin-top: 5%;
+	height: 50%;
+	width: 50%;
+}
+
+div#arr
+{
+	position: relative;
+	margin-left: 50%;
+	height: 50px;
+	width: 50px;
+}
+
+div#arr2
+{
+	position: relative;
+
+	margin-left: 50%;
+	margin-top: 10px; 
+
+	height: 50px;
+	width: 50px;
+}
+
+div#profile
+{
+	visibility: hidden;
+
+	position: fixed;
+
+	background-color: #000;
+
+	margin: 30px auto;
+	top: 0px; 
+	left: 0px;
+	bottom: 0px;
+	right: 0px;
+
+	z-index: 999;
+
+	text-align: center;
+
+	height: 90%;
+	width: 350px;
+}
+
+img#bighead
+{
+	position: relative;
+
+	top: 30px;
+	height: 120px;
+	width: 120px;
+
+	border-radius: 50%;
+}
+
+div#profile div#name
+{
+	position: relative;
+
+	top: 10px;
+}
+
+div#profile div#name p
+{
+	font-size: 25px;
+}
+
+div#profile div#post
+{
+
+}
+
+div#profile div.list
+{
+	position: relative;
+	text-align: left;
+	margin-left: 30px;
+	top: 10px;
+	width: 100%;
+}
+
+img.icon
+{
+	height: 30px;
+	width: 30px;
+}
+
+div#profile div.list span
+{
+	font-size: 20px;
+	vertical-align: 40%;
+}
+
+div#profile div.list span.tittle
+{
+	margin-left: 30px;
+}
+
+
+div#profile div.list span.number
+{
+	position: absolute;
+	left: 180px; 
+
+}
+
+div#give
+{
+	margin-top: 50px; 
+}
+
+div#give p
+{
+	font-size: 50px;
+}

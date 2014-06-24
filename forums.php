@@ -27,7 +27,7 @@
 
 <html>
 <head>
-<link href="stylesheet/forums.css" rel="stylesheet" type="text/css"></link>
+<link href="stylesheet/forums_W.css" rel="stylesheet" type="text/css"></link>
 <link href="stylesheet/profile.css" rel="stylesheet" />
 <link href="stylesheet/score.css" rel="stylesheet" />
 <link href="stylesheet/allComPanel.css" rel="stylesheet" />
