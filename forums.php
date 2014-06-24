@@ -28,7 +28,7 @@
 	else if(fration == 1) var fra = 'White';
 	var topic = 'Nuclear';
 	var table = 1;
-	var openAllComment = openSet(event, topic, fra, 1);
+	var openAllComment = openSet(event, topic, fra, table);
 	function newClick(){
 			$("#down").animate({
 				height:'100%',
@@ -54,7 +54,7 @@
 
 	$(document).ready(function() {
 
-		loadAllComment(fration, topic, 1);
+		loadAllComment(fration, topic, table);
 
 		$('#input_comment_area').keydown(function(event){inputKeyDown(event, uid, username, fration, topic, table)});
 		$("#arrow-text").click(newClick);
@@ -138,10 +138,12 @@
 	<span id="line"></span>
 	<span id="allRight">
 		<div id="allReply"></div>
+	<?php  if(!empty($_SESSION['uid'])){ ?>
 		<div id="replyPart">
 			<img id="replyButton" src="images/forumns/reply.png" />
 			<textarea id="replyArea" placeholder="給點意見吧 !"></textarea>
 		</div>
+	<?php } ?>
 	</span>
 
   </div>

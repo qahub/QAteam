@@ -14,6 +14,8 @@
 	<script src="js/addCircle.js"></script>
 	<script src="js/freeTalk.js"></script>
 	<script src="js/custom.js"></script>
+	<script src="plugin/prefectScrollBar/jquery.mousewheel.js"></script>
+	<script src="plugin/prefectScrollBar/perfect-scrollbar.js"></script>
 	<script>
 	var openAll = openSet('<?php echo $topic; ?>');
 	var leftCircle = circleSet();
@@ -39,6 +41,18 @@
 		loadAllFreeTalk(topic);
 		$('#input_talk_area').keydown(function(event){inputKeyDown(event, uid, username,topic)});
 		$('#headpic').click( function(){ getSomeInformation(uid, username);});
+		$('#board').perfectScrollbar({
+          wheelSpeed: 20,
+          wheelPropagation: false
+        });
+		$('#freeTalk').perfectScrollbar({
+          wheelSpeed: 20,
+          wheelPropagation: false
+        });
+		$('#allContent').perfectScrollbar({
+          wheelSpeed: 20,
+          wheelPropagation: false
+        });
 	});
 
 	</script>

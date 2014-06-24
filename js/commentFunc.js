@@ -140,7 +140,7 @@ function uploadReply(_qid, _fration, _topic, _table){
 
 
 	var _reply = $('#replyArea').val();
-
+	if( _reply == "") return;
 		$.ajax({
 
 			url: "qa_cgi/addReplyToComment.php",
