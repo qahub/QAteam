@@ -141,7 +141,7 @@ function showProfile(_uid)
 	$('#profile').css("visibility","visible");
 	$('#allmask').css("visibility","visible");
 
-	var headpic_address = "http://graph.facebook.com/" + _uid + "/picture";
+	var headpic_address = "http://graph.facebook.com/" + _uid.trim() + "/picture";
 	$('#bighead').attr('src', headpic_address);
 	$('#bighead').css("position", "relative");
 	$('#bighead').css("height", "120px");
