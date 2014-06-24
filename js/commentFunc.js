@@ -140,8 +140,15 @@ function showProfile(_uid)
 {
 	$('#profile').css("visibility","visible");
 	$('#allmask').css("visibility","visible");
-	alert(_uid);
-	
+
+	var headpic_address = "http://graph.facebook.com/" + _uid + "/picture";
+	$('#bighead').attr('src', headpic_address);
+	$('#bighead').css("position", "relative");
+	$('#bighead').css("height", "120px");
+	$('#bighead').css("width", "120px");
+	$('#bighead').css("top", "30px");
+	$('#bighead').css("border-radius", "50%");
+
 }
 
 function uploadReply(_qid, _fration, _topic, _table, _status){
