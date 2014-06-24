@@ -36,13 +36,13 @@ $(document).ready( function () {
 
 	$('#black').click(function() {
 
-		normalLink('forums.php?fration=2');
+		normalLink("forums.php?fration=2&status='A'");
 
 	});
 
 	$('#white').click(function() {
 
-		normalLink('forums.php?fration=1');
+		normalLink("forums.php?fration='1'&status='A'");
 
 	});
 

@@ -22,6 +22,7 @@
 		$table = $valid;
 
 	}
+	echo $table;
 
 ?>
 
