@@ -50,7 +50,7 @@ span.dateTime
 span
 {
 	font: "Century Gothic", Arial, Helvetica, Geneva, sans-serif;
-	color: #FFF;
+	color: #000;
 }
 
 span.comment
@@ -91,7 +91,7 @@ span.name:hover
 
 span.grade
 {
-	color: #000;
+	color: #FFF;
 	position: relative;
 	top: 5px;
 	width: 60px;
@@ -102,7 +102,7 @@ span.vote
 	position: relative;
 	top: 8px;
 	margin: 0 auto;
-	color: #000;
+	color: #FFF;
 	font-size: 20px;
 }
 
