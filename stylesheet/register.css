@@ -70,3 +70,20 @@
 	border: 1px solid #bbbbbb;
 
 }
+
+div#headpic
+{
+	text-align: center;
+}
+
+div#headpic img
+{
+	position: relative;
+
+	height: 70px;
+	width: 70px;
+
+	margin: 0 auto; 
+
+	border-radius: 50%;
+}

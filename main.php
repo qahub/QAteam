@@ -91,7 +91,9 @@
 	 <div id="headpic">
 		<?php if(!(empty($_SESSION['uid']))) { ?>
 			<?php echo $_SESSION['username'];?>
+			<img src='images/test.jpg'></img>
 		<?php } ?>
+		
 	 </div>
 	 <div id="custom">
 		<div id="customTop"></div>
