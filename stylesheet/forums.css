@@ -69,6 +69,11 @@ span.name
 	font-size: 25px;
 }
 
+span.name:hover
+{
+	cursor: pointer;
+}
+
 .more {
 
 	position: absolute;
@@ -359,7 +364,7 @@ div#profile
 
 	background-color: #000;
 
-	margin: 50px auto;
+	margin: 30px auto;
 	top: 0px; 
 	left: 0px;
 	bottom: 0px;
@@ -367,6 +372,80 @@ div#profile
 
 	z-index: 999;
 
-	height: 450px;
-	width: 300px;
+	text-align: center;
+
+	height: 90%;
+	width: 350px;
+}
+
+img#bighead
+{
+	position: relative;
+
+	top: 30px;
+	height: 120px;
+	width: 120px;
+
+	border-radius: 50%;
+}
+
+div#profile div#name
+{
+	position: relative;
+
+	top: 10px;
+}
+
+div#profile div#name p
+{
+	font-size: 25px;
+}
+
+div#profile div#post
+{
+
+}
+
+div#profile div.list
+{
+	position: relative;
+	text-align: left;
+	margin-left: 30px;
+	top: 10px;
+	width: 100%;
+}
+
+img.icon
+{
+	height: 30px;
+	width: 30px;
+}
+
+div#profile div.list span
+{
+	font-size: 20px;
+	vertical-align: 40%;
+}
+
+div#profile div.list span.tittle
+{
+	margin-left: 30px;
+}
+
+
+div#profile div.list span.number
+{
+	position: absolute;
+	left: 180px; 
+
+}
+
+div#give
+{
+	margin-top: 50px; 
+}
+
+div#give p
+{
+	font-size: 50px;
 }

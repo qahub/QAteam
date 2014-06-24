@@ -77,7 +77,7 @@
           wheelSpeed: 20,
           wheelPropagation: false
         });
-        
+
 		$('#allReply').perfectScrollbar({
           wheelSpeed: 20,
           wheelPropagation: false
@@ -152,6 +152,26 @@
 	</span>
 
   </div>
-  <div id='profile'></div>
+  <div id='profile'>
+  	<img id = 'bighead' src='images/test.jpg'> </img>
+  	<div id = 'name'> <p> battle cat </p> </div>
+  	<div id = 'post' class = 'list'> 
+  		<img class = 'icon' src='images/profile/01.png'> </img>
+  		<span class = 'tittle'> Post </span>
+  		<span class = 'number'> 3132 </span> 
+  	</div>
+  	<div id = 'vote' class = 'list'> 
+  		<img class = 'icon' src='images/profile/02.png'> </img>
+  		<span class = 'tittle'> Vote </span>
+  		<span class = 'number'> 3132 </span> 
+  	</div>
+  	<div id = 'last_time' class = 'list'> 
+  		<img class = 'icon' src='images/profile/03.png'> </img>
+  		<span class = 'tittle'> Last time </span>
+  		<span class = 'number'> Jun 15 19:05 </span> 
+  	</div>
+  	<div id = 'give'> <p> TRUST </p> </div>
+
+  </div>
 </body>
 </html>
