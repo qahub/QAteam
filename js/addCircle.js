@@ -1,8 +1,8 @@
 	function openSet(_topic){
 
-		function openAll(_id, _count){
+		function openAll(_id, _num){
 
-			_count++;
+			_num += 1;
 			$('#allmask').css("visibility","visible");
 			$('#all').css("visibility","visible");
 
@@ -16,7 +16,7 @@
 					$('#contentA').append(data.content);
 					$('#contentQ').append(data.contentQ);
 					$('#toBoardButton').click(function() {
-						document.location.href = "forums.php?valid="+_count+"&fration="+data.fration+"&status='A'";
+						document.location.href = "forums.php?valid="+_num+"&fration="+data.fration+"&status='A'";
 					});
 
 				},
@@ -125,8 +125,8 @@ $(document).ready(function (){
 	
 		$('#allmask').css("visibility","hidden");
 		$('#all').css("visibility","hidden");
-		$('#allTitle').html("");
-		$('#allContent').html("");
+		$('#contentA').html("");
+		$('#contentQ').html("");
 	
 	});
 	

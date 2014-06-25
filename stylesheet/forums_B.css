@@ -440,14 +440,32 @@ div#profile div.list span.number
 
 }
 
-div#give
+div.give
 {
 	margin-top: 50px; 
 }
 
-div#give p
+div.give p
 {
 	font-size: 50px;
+}
+
+div.give:hover{
+
+	cursor: pointer
+
+}
+
+#voteBack {
+
+	margin-top: 50px; 
+	visibility: hidden;
+	color: #FFF;
+	font-size: 36pt;
+}
+#voteBack:hover{
+
+	cursor: pointer;
 }
 
 img#logo

@@ -87,6 +87,9 @@
 
 			$('#profile').css("visibility","hidden")
 			$('#bighead').attr('src', 'images/profile/default.jpg');
+			$('#give').remove();
+			$('#voteBack').remove();
+			$('#profile').append("<div id = 'give' class='give'> <p> TRUST </p> </div><div id = 'voteBack' > Vote Back </div>");
 		
 			$('#allReply').html("");
 			$('#replyPart').html("");
@@ -103,7 +106,7 @@
           wheelSpeed: 20,
           wheelPropagation: false
         });
-
+		
 
 	});
 
@@ -113,11 +116,20 @@
 
 <body>
 
+	
+	<?php 
+	if($srow['nowStatus'] == "Q"){ ?>
+	
 	<?php if($_GET['fration'] == 2) { ?>
 		<img id = 'logo' src="images/forumns/Q_black.png"> </img>
 	<?php }else if($_GET['fration'] == 1){ ?>
 		<img id = 'logo' src="images/forumns/Q_white.png"> </img>
-	<?php } ?>
+	<?php }}else{ ?>
+	<?php if($_GET['fration'] == 2) { ?>
+		<img id = 'logo' src="images/forumns/A_black.png"> </img>
+	<?php }else if($_GET['fration'] == 1){ ?>
+		<img id = 'logo' src="images/forumns/A_white.png"> </img>
+	<?php }} ?>
 
 
 	<div id ='forums'>
@@ -144,7 +156,7 @@
  	<div class='middle'>
 		MENU
 	</div>
-	<?php if($_SESSION['fration'] != 1){ ?>	
+	<?php if($_SESSION['fration'] != 1 && $srow['nowFration'] == 2){ ?>	
 	<img id='black' class='link'  src='images/mainpage/goBlack.png' width="100px" height="120px" />
 	<?php } ?>
 	<div id='midPart'>
@@ -159,7 +171,7 @@
 	<?php } ?>
 		<span class='link' id='home'>Home</span>
 	</div>
-	<?php if($_SESSION['fration'] != 2){ ?>
+	<?php if($_SESSION['fration'] != 2 && $srow['nowFration'] == 1){ ?>
 	<img id='white' class='link' src='images/mainpage/goWhite.png' width="100px" height="120px" />
 	<?php } ?>
   </nav>
@@ -199,7 +211,8 @@
   		<span class = 'tittle'> Last time </span>
   		<span class = 'number'> Jun 15 19:05 </span> 
   	</div>
-  	<div id = 'give'> <p> TRUST </p> </div>
+  	<div id = 'give' class='give'> <p> TRUST </p> </div>
+  	<div id = 'voteBack' > Vote Back </div>
 
   </div>
 </body>

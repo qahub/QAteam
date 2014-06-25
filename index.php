@@ -1,12 +1,23 @@
 <?php 
 
+	require "qa_cgi/connect.php";
 	session_start(); 
 	$username = $_SESSION['username'];
 	$webName = $_GET['web'];
+	$squery = mysql_query("SELECT * FROM `5_NuclearState`") or die(mysql_error());
+	$srow = array();
+
+	while( ($result = mysql_fetch_assoc($squery)) != false){
+		$name = $result['name'];
+		$value = $result['value'];
+		$srow[$name] = $value;
+
+	}
 
 ?>
 <html>
 <head>
+	<title>Q & A</title>
 	<link href="stylesheet/profile.css" rel="stylesheet" />
 	<link href="stylesheet/allPanel.css" rel="stylesheet" />
 	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
@@ -45,7 +56,7 @@
  	<div class='middle'>
 		MENU
 	</div>	
-	<?php if($_SESSION['fration'] != 1) { ?>
+	<?php if($_SESSION['fration'] != 1 && $srow['nowFration'] == 2) { ?>
 	<img id='black' class='link'  src='images/mainpage/goBlack.png' width="100px" height="120px" />
 	<?php } ?>
 	<div id='midPart'>
@@ -60,7 +71,7 @@
 	<?php } ?>
 		<span class='link' id='home'>Home</span>
 	</div>
-	<?php if( $_SESSION['fration'] != 2) { ?>
+	<?php if( $_SESSION['fration'] != 2 && $srow['nowFration'] == 1) { ?>
 	<img id='white' class='link' src='images/mainpage/goWhite.png' width="100px" height="120px" />
 	<?php } ?>
   </nav>

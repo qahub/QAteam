@@ -149,6 +149,63 @@ function showProfile(_uid)
 	$('#bighead').css("top", "30px");
 	$('#bighead').css("border-radius", "50%");
 
+	$.ajax({
+		url: "qa_cgi/loadUserData.php",
+		type: "get",
+		dataType: "json",
+		data: { uid : _uid },
+		success: function(data){
+			$('#name').html("<p>"+data.username+"</p>");
+			$('#vote .number').html(data.vote);
+			if(data.back == 1){
+				$('#give').css('visibility', 'hidden');
+				$('#voteBack').css('visibility', 'visible');
+			}else if(data.back == 2){
+				$('#give').css('visibility', 'hidden');
+			}
+		},
+		error: function(xhr, ajaxOptions){
+		}
+
+
+	});
+	$('#give').click(function(){
+
+		$.ajax({
+			url: "qa_cgi/giveVote.php",
+			type: "post",
+			dataType: "json",
+			data: { gid : _uid },
+			success: function(data){
+				if( data.meg != 0) {
+					$('#give').css('visibility', 'hidden');
+					$('#voteBack').css('visibility', 'visible');
+				}else {
+					alert("You already give someone vote");
+				}
+
+			},
+			error: function(xhr, ajaxOptions){
+			},
+			async: false
+		});
+	});
+	$('#voteBack').click(function(){
+
+		$.ajax({
+			url: "qa_cgi/backVote.php",
+			type: "post",
+			data: { gid : _uid },
+			success: function(data){
+				$('#give').css('visibility', 'visible');
+				$('#voteBack').css('visibility', 'hidden');
+			},
+			error: function(xhr, ajaxOptions){
+			}
+		});
+
+	});
+
 }
 
 function uploadReply(_qid, _fration, _topic, _table, _status){
