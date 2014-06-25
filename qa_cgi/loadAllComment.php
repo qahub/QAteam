@@ -6,6 +6,8 @@
 	if($_GET['fration'] == 2) $fration = 'Black';
 	else $fration = 'White';
 	$status = $_GET['status'];
+	$uid = $_SESSION['uid'];
+
 ?>
 
 <script>
@@ -19,6 +21,17 @@
 	
 	$cquery = mysql_query("SELECT * FROM `5_".$fration.$topic.$status.$table."` ORDER BY `grade` DESC"); 
 	while(($crow = mysql_fetch_assoc($cquery)) != FALSE ) {
+
+		$ssrow = explode(",",$crow['evaluate']);
+		$key = array_search($uid, $ssrow);
+
+		if($key != false) {  // exist
+			$check =  1;
+		}else {
+			$check =  0;
+		}
+
+
 		if(strlen($crow['comment']) > 60) {
 			$comment = mb_substr($crow['comment'],0,60,'utf8')."...";
 		}else{
@@ -39,7 +52,7 @@
 					</div>	
 				</div>
 				<div class='rightcom'>
-				<?php if($_SESSION['fration']==$_GET['fration']){ ?>
+				<?php if(($_SESSION['fration']==$_GET['fration']) && $check != 1 ){ ?>
 				<span class='vote' onclick="score(<?php echo $crow['id']; ?>, $(this).offset(),fration,topic,table,sta);">vote</span>	
 				<?php }else{ ?>
 				<span class='vote'>vote</span>

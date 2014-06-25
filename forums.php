@@ -26,7 +26,11 @@
 
 <html>
 <head>
+<?php if($fration == 1) { ?> 
 <link href="stylesheet/forums_W.css" rel="stylesheet" type="text/css"></link>
+<?php } else if($fration == 2) { ?>
+<link href="stylesheet/forums_B.css" rel="stylesheet" type="text/css"></link>
+<? } ?>
 <link href="stylesheet/profile.css" rel="stylesheet" />
 <link href="stylesheet/score.css" rel="stylesheet" />
 <link href="stylesheet/allComPanel.css" rel="stylesheet" />

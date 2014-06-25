@@ -52,6 +52,7 @@ function uploadCommit( _uid, _username, _fration, _topic, _table, _status){
 }
 
 function score(id,pos,fration,topic, table, sta){
+
 	var x = pos.left+40;
 	var y = pos.top-5;
 	var i = 0;
@@ -76,7 +77,6 @@ function score(id,pos,fration,topic, table, sta){
 		$('.good_'+3).click(function() { addScore(3, id, fration, topic, table,sta);})
 		$('.good_'+4).click(function() { addScore(4, id, fration, topic, table,sta);})
 		$('.good_'+5).click(function() { addScore(5, id, fration, topic, table,sta);})
-
 }
 
 function addScore(_score, _id, _fration, _topic, _table,_status){
@@ -90,6 +90,8 @@ function addScore(_score, _id, _fration, _topic, _table,_status){
 			$('#vote'+_id).html("Thank you for your vote !").css({'width':'200px','height':'40px','color':'#fff', 'font-size':'13pt', 'border-radius':'5px','padding':'5px'});
 			setTimeout(function(){ $('#vote'+_id).remove(); }, 1000);
 			$('._'+_id).html(data.grade);
+			location.reload();
+			
 
 		},
 		error: function(xhr) {
